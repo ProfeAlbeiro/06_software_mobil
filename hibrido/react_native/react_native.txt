@@ -467,6 +467,16 @@
                         └── tsconfig.json                                               # A. Configuración para el compilador de TypeScript.
 
 
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  NOTA:   
+                    
+                    ⦿   Descargar de https://github.com/ProfeAlbeiro/06_software_mobil/tree/main/hibrido/react_native/resources/assets las imágenes 
+                        del proyecto, en la carpeta 'assets' de 'frontend'.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
@@ -474,12 +484,137 @@
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
+
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.01.  Codificar la cadena de conexión en 'backend/config/config.js': ----------------------------------------------------------------------------------------------|
+|-- 03.01.  Modificar la raíz del proyecto 'frontend/App.tsx': ----------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                    01   const mysql = require('mysql');
-
+                    01   import { StatusBar } from 'expo-status-bar';
+                    02   import { StyleSheet, Text, View, Image, TextInput, Button, ToastAndroid } from 'react-native';
+                    03
+                    04   export default function App() {
+                    05     return (
+                    06       <View style={styles.container}>
+                    07         <Image
+                    08           source={require('./assets/chef.jpg')}
+                    09           style={styles.imageBackground}
+                    10         />
+                    11         <View style={styles.logoContainer}>
+                    12           <Image
+                    13             source={require('./assets/logo.png')}
+                    14             style={styles.logoImage}
+                    15           />
+                    16           <Text style={styles.logoText}>FOOD APP</Text>
+                    17         </View>
+                    18         <View style={styles.form}>
+                    19           <Text style={styles.formText}>INGRESAR</Text>
+                    20           <View style={styles.formInput}>
+                    21             <Image style={styles.formIcon}
+                    22               source={require('./assets/email.png')}
+                    23             />
+                    24             <TextInput
+                    25               style={styles.formTextInput}
+                    26               placeholder='Correo electrónico'
+                    27               keyboardType='email-address'
+                    28             />
+                    29           </View>
+                    30           <View style={styles.formInput}>
+                    31             <Image style={styles.formIcon}
+                    32               source={require('./assets/password.png')}
+                    33             />
+                    34             <TextInput
+                    35               style={styles.formTextInput}
+                    36               placeholder='Contraseña'
+                    37               keyboardType='default'
+                    38               secureTextEntry={true}
+                    39             />
+                    40           </View>
+                    41           <View style={{ marginTop: 30 }}>
+                    42             <Button
+                    43               title='ENVIAR'
+                    44               onPress={() => ToastAndroid.show('CLICK', ToastAndroid.LONG)}
+                    45               color={'orange'}
+                    46             />
+                    47           </View>
+                    48           <View style={styles.formRegister}>
+                    49             <Text>¿No tienes cuenta?</Text>
+                    50             <Text style={styles.formRegisterText}>Regístrate</Text>
+                    51           </View>
+                    52         </View>
+                    53       </View>
+                    54     );
+                    55   }
+                    56
+                    57   const styles = StyleSheet.create({
+                    58     container: {
+                    59       flex: 1,
+                    60       backgroundColor: 'black',
+                    61     },
+                    62     imageBackground: {
+                    63       width: '100%',
+                    64       height: '100%',
+                    65       opacity: 0.7,
+                    66       bottom: '30%',
+                    67     },
+                    68     logoContainer: {
+                    69       position: 'absolute',
+                    70       alignSelf: 'center',
+                    71       top: '15%',
+                    72     },
+                    73     logoImage: {
+                    74       width: 100,
+                    75       height: 100,
+                    76     },
+                    77     logoText: {
+                    78       color: 'white',
+                    79       textAlign: 'center',
+                    80       fontSize: 20,
+                    81       marginTop: 10,
+                    82       fontWeight: 'bold',
+                    83     },
+                    84     form: {
+                    85       width: '100%',
+                    86       height: '40%',
+                    87       backgroundColor: 'white',
+                    88       position: 'absolute',
+                    89       bottom: 0,
+                    90       borderTopLeftRadius: 40,
+                    91       borderTopRightRadius: 40,
+                    92       padding: 30,
+                    93     },
+                    94     formText: {
+                    95       fontWeight: 'bold',
+                    96       fontSize: 16,
+                    97     },
+                    98     formIcon: {
+                    99       width: 25,
+                   100       height: 25,
+                   101       marginTop: 5,
+                   102     },
+                   103     formInput: {
+                   104       flexDirection: 'row',
+                   105       marginTop: 30,
+                   106     },
+                   107    formTextInput: {
+                   108      flex: 1,
+                   109       borderBottomWidth: 1,
+                   110       borderBottomColor: '#AAAAAA',
+                   111       marginLeft: 15,
+                   112    },
+                   113    formRegister: {
+                   114      flexDirection: 'row',
+                   115      justifyContent: 'center',
+                   116      marginTop: 20,
+                   117    },
+                   118    formRegisterText: {
+                   119      fontStyle: 'italic',
+                   120      color: 'orange',
+                   121      borderBottomWidth: 1,
+                   122      borderBottomColor: 'orange',
+                   123      fontWeight: 'bold',
+                   124      marginLeft: 10,
+                   125    },
+                   126  });
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
