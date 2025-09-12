@@ -299,12 +299,12 @@
                          > npm install
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 05.06.  Ejecutar 'frontend' en el emulador de Android: --------------------------------------------------------------------------------------------------------------|
+|-- 02.02.  Ejecutar 'frontend' en el emulador de Android: --------------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
             01. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
 
-                    ⦿   PS C:\..\..> cd frontend
+                    ⦿   PS C:\..\..> cd frontend                    
                     ⦿   PS C:\..\frontend> npm run android
 
             NOTA:   ⦿   Tener en cuenta los siguientes comandos de 'Expo Go'. En la Terminal de 'Visual Studio Code' puede ejecutar:
@@ -345,37 +345,30 @@
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 05.07.  Ejecutar 'frontend' en un dispositivo físico Android: ---------------------------------------------------------------------------------------|
+|-- 02.03.  Ejecutar 'frontend' en un dispositivo físico Android: -------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-            01. En el dispositivo, ir a tienda, para Android es Play Store, buscar 'Expo go' e instalarla.
+            01. En el dispositivo, ir a tienda, para Android es Play Store, buscar 'Expo go' e instalarlo.
 
-            02. En la terminal de 'Visual Studio Code', ejecutar:
+            02. Abrir la aplicación 'Expo Go' en el dispositivo.
 
-                    ⦿   PS C:\..\frontend> expo start
-
-            03. Si le solicita dependencias adicionales, pulsar 'Y' para instalarlas. Se generará un código QR.
-
-            04. Abrir la aplicación 'Expo Go' en el dispositivo.
-
-            05. Escanear el 'código QR' con el dispositivo. Los dos equipos deben estar en la misma red WiFi.
-            
-
+            03. Escanear el 'código QR' con el dispositivo. Los dos equipos deben estar en la misma red WiFi.
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 02.02.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
+|-- 02.04.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
                                                                                                                                                       
                                                                                                                                                       # C = Carpetas
                                                                                                                                                       # A = Archivos
 
                     proyecto/                                                           # C. Proyecto móvil en React Native.
-                    └── frontend/                                                       # C. Aplicación móvil de React Native.
+                    └── frontend/                                                       # C. Carpeta raíz del proyecto en React Native.
+        (NO CREAR)      ├── .expo/                                                      # C. Configuraciones del proyecto utilizados por la herramienta 'Expo'
         (NO CREAR)      ├── assets/                                                     # C. Recursos estáticos (imágenes, fuentes).
         (NO CREAR)      ├── node_modules/                                               # C. Dependencias (librerías) instaladas para el frontend.
                         ├── src/                                                        # C. Carpetas y archivos de la aplicación React Native.
-                        │   ├── Data/                                                   # C. Capa para obtención y manipulación de datos.
+                        │   ├── data/                                                   # C. Capa para obtención y manipulación de datos.
                         │   │   ├── repositories/                                       # C. Interfaces para acceder a diferentes fuentes de datos.
                         │   │   │   ├── AuthRepository.tsx                              # A. Lógica para la autenticación.
                         │   │   │   └── UserLocalRepository.tsx                         # A. Gestión de datos del usuario a nivel local (AsyncStorage).
@@ -387,7 +380,7 @@
                         │   │           │   └── ApiDelivery.tsx                         # A. Cliente para interactuar con la API relacionada con "delivery".
                         │   │           └── models/                                     # C. Estructuras de datos que se reciben de la API.
                         │   │               └── ResponseApiDelivery.tsx                 # A. Tipo de la respuesta de la API de "delivery".
-                        │   ├── Domain/                                                 # C. Lógica de negocio y entidades del dominio (independiente).
+                        │   ├── domain/                                                 # C. Lógica de negocio y entidades del dominio (independiente).
                         │   │   ├── entities/                                           # C. Estructuras de los objetos del negocio (User).
                         │   │   │   └── User.tsx                                        # A. Entidad de usuario con sus propiedades (nombre, email).
                         │   │   ├── repositories/                                       # C. Interfaces para acceder a los datos (implementado en Data).
@@ -401,7 +394,7 @@
                         │   │           ├── GetUserLocal.tsx                            # A. Obtener información del usuario almacenado localmente.
                         │   │           ├── RemoveUserLocal.tsx                         # A. Eliminar información del usuario almacenado localmente.
                         │   │           └── SaveUserLocal.tsx                           # A. Guardar la información del usuario localmente.
-                        │   └── Presentation/                                           # C. Capa de la interfaz y presentación de datos (components, views).
+                        │   └── presentation/                                           # C. Capa de la interfaz y presentación de datos (components, views).
                         │       ├── components/                                         # C. Componentes de interfaz de usuario (inputs, buttons).
                         │       │   ├── CustomTextInput.tsx                             # A. Componente de entrada de texto personalizado con estilos.
                         │       │   └── RoundedButton.tsx                               # A. Componente de botón con estilos de bordes redondeados.
