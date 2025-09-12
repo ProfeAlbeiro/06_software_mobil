@@ -276,14 +276,14 @@
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 02.01.  Crear la carpeta raiz del proyecto: -------------------------------------------------------------------------------------------------------------------------|
+|-- 02.01.  Crear la carpeta raiz del proyecto y su estructura inicial: -------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
             Para obtener los comandos TypeScript a ejecutar: https://reactnative.dev/docs/typescript.
 
             01. Crear en Windows una carpeta denominada 'proyecto'.
             
-            01. Abrir la carpeta 'proyecto' en Visual Studio Code.
+            02. Abrir la carpeta 'proyecto' en Visual Studio Code.
 
             03. En la terminal de 'Visual Studio Code', crear el proyecto:
 
@@ -297,6 +297,71 @@
                          √ What is your app named? ... frontend
                          √ Downloaded and extracted project files.
                          > npm install
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.06.  Ejecutar 'frontend' en el emulador de Android: --------------------------------------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+            01. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
+
+                    ⦿   PS C:\..\..> cd frontend
+                    ⦿   PS C:\..\frontend> npm run android
+
+            NOTA:   ⦿   Tener en cuenta los siguientes comandos de 'Expo Go'. En la Terminal de 'Visual Studio Code' puede ejecutar:
+
+                              › Using Expo Go
+                              › Press s │ switch to development build
+
+                              › Press a │ open Android
+                              › Press w │ open web
+
+                              › Press j │ open debugger
+                              › Press r │ reload app
+                              › Press m │ toggle menu
+                              › shift+m │ more tools
+                              › Press o │ open project code in your editor
+
+                              › Press ? │ show all commands
+
+                              Logs for your project will appear below. Press Ctrl+C to exit.
+
+                              › Using Expo Go
+                              › Press s │ switch to development build
+
+                              › Press a │ open Android
+                              › shift+a │ select an Android device or emulator
+                              › Press w │ open web
+
+                              › Press r │ reload app
+                              › Press j │ open debugger
+                              › Press m │ toggle menu
+                              › shift+m │ more tools
+                              › Press o │ open project code in your editor
+                              › Press c │ show project QR
+
+            02. Cambiar el nombre de la terminal a 'frontend', seleccionándola en la parte inferior derecha y presionando F2 / Rename...
+            
+            03. Cambiar el color de la terminal 'frontend', dando click derecho / Chage Color... / Seleccionar el color
+
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.07.  Ejecutar 'frontend' en un dispositivo físico Android: ---------------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+            01. En el dispositivo, ir a tienda, para Android es Play Store, buscar 'Expo go' e instalarla.
+
+            02. En la terminal de 'Visual Studio Code', ejecutar:
+
+                    ⦿   PS C:\..\frontend> expo start
+
+            03. Si le solicita dependencias adicionales, pulsar 'Y' para instalarlas. Se generará un código QR.
+
+            04. Abrir la aplicación 'Expo Go' en el dispositivo.
+
+            05. Escanear el 'código QR' con el dispositivo. Los dos equipos deben estar en la misma red WiFi.
+            
+
+
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.02.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
