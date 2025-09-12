@@ -6,8 +6,8 @@
 |||                                                                                                                                                                    |||
 ||| --  01. ENTORNO DE DESARROLLO                                                                                                                                      |||
 ||| --  02. ESTRUCTURA DEL PROYECTO                                                                                                                                    |||
-||| --  03. BASE DE DATOS                                                                                                                                              |||
-||| --  04. CÓDIGO DEL PROYECTO                                                                                                                                        |||
+||| --  03. CÓDIGO DEL PROYECTO                                                                                                                                        |||
+||| --  04. BASE DE DATOS                                                                                                                                              |||
 ||| --  05. PRUEBAS DE LA API CON POSTMAN                                                                                                                              |||
 |||                                                                                                                                                                    |||
 ||| --  ANEXOS: TENER EN CUENTA                                                                                                                                        |||
@@ -36,23 +36,23 @@
 ||| --      01.11.  Crear el Emulador en Android Studio                                                                                                                |||
 ||| --      01.12.  Instalar Expo CLI                                                                                                                                  |||
 ||| --  02. ESTRUCTURA DEL PROYECTO                                                                                                                                    |||
-||| --      02.01.  Crear la carpeta raiz del proyecto y su estructura inicial                                                                                         |||
+||| --      02.01.  Crear la carpeta raiz del proyecto                                                                                                                 |||
 ||| --      02.02.  Ejecutar 'frontend' en el emulador de Android                                                                                                      |||
 ||| --      02.03.  Ejecutar 'frontend' en un dispositivo físico Android                                                                                               |||
 ||| --      02.04.  Modificar el mensaje de inicio del proyecto en 'frontend/App.tsx'                                                                                  |||
 ||| --      02.05.  Crear la estructura de carpetas y los archivos del proyecto                                                                                        |||
-||| --  03. BASE DE DATOS                                                                                                                                              |||
-||| --      03.01.  Codificar la base de datos 'database/db_node.sql'                                                                                                  |||
-||| --      03.02.  Ejecutar la base de datos 'database/db_node.sql'                                                                                                   |||
-||| --  04. CÓDIGO DEL PROYECTO                                                                                                                                        |||
-||| --      04.01.  Codificar la cadena de conexión en 'backend/config/config.js'                                                                                      |||
-||| --      04.02.  Codificar el modelo usuarios en 'backend/models/user.js'                                                                                           |||
-||| --      04.03.  Codificar la key en 'backend/config/keys.js'                                                                                                       |||
-||| --      04.04.  Codificar el Jason Web Token con la key en 'backend/config/passport.js'                                                                            |||
-||| --      04.05.  Codificar la API de usuarios en 'backend/controllers/userController.js'                                                                            |||
-||| --      04.06.  Codificar la ruta de usuario en 'backend/routes/userRoutes.js'                                                                                     |||
-||| --      04.07.  Codificar el servidor en 'backend/server.js'                                                                                                       |||
-||| --      04.08.  Ejecutar el Servidor 'server.js'                                                                                                                   |||
+||| --  03. CÓDIGO DEL PROYECTO                                                                                                                                        |||
+||| --      03.01.  Codificar la cadena de conexión en 'backend/config/config.js'                                                                                      |||
+||| --      03.02.  Codificar el modelo usuarios en 'backend/models/user.js'                                                                                           |||
+||| --      03.03.  Codificar la key en 'backend/config/keys.js'                                                                                                       |||
+||| --      03.04.  Codificar el Jason Web Token con la key en 'backend/config/passport.js'                                                                            |||
+||| --      03.05.  Codificar la API de usuarios en 'backend/controllers/userController.js'                                                                            |||
+||| --      03.06.  Codificar la ruta de usuario en 'backend/routes/userRoutes.js'                                                                                     |||
+||| --      03.07.  Codificar el servidor en 'backend/server.js'                                                                                                       |||
+||| --      03.08.  Ejecutar el Servidor 'server.js'                                                                                                                   |||
+||| --  04. BASE DE DATOS                                                                                                                                              |||
+||| --      04.01.  Codificar la base de datos 'database/db_node.sql'                                                                                                  |||
+||| --      04.02.  Ejecutar la base de datos 'database/db_node.sql'                                                                                                   |||
 ||| --  05. PRUEBAS DE LA API CON POSTMAN                                                                                                                              |||
 ||| --      05.01.  Crear la Colección 'USUARIOS'                                                                                                                      |||
 ||| --      05.02.  Crear los métodos HTTP (GET, POST, PUT, DELETE) de la Colección 'USUARIOS'                                                                         |||
@@ -280,7 +280,7 @@
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 02.01.  Crear la carpeta raiz del proyecto y su estructura inicial: -------------------------------------------------------------------------------------------------|
+|-- 02.01.  Crear la carpeta raiz del proyecto: -------------------------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
             Para obtener los comandos TypeScript a ejecutar: https://reactnative.dev/docs/typescript.
@@ -470,50 +470,7 @@
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
-|||------------------------------------------------------------------------ 03. BASE DE DATOS -------------------------------------------------------------------------|||
-|||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
-|||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
-
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.01. Codificar la base de datos 'database/db_react.sql': ----------------------------------------------------------------------------------------------------------|
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-                    01   CREATE SCHEMA db_node DEFAULT CHARACTER SET utf8 ;
-
-
-                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
-                |                                                                                                                                         |
-                  EXPLICACIÓN:   
-                    
-                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
-
-                |---------------------------------------------------------------------------------------------------------------------------------------- |
-                
-                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
-                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
-                |                                                                                                                                         |
-                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
-
-
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.02. Ejecutar la base de datos 'database/db_react.sql': -----------------------------------------------------------------------------------------------------------|
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-            01. Abrir el navegador y escribir http://localhost/phpmyadmin/
-            
-            02. Dar click a 'Importar'
-            
-            03. Dar click a 'Seleccionar archivo'
-            
-            04. Seleccionar el archivo 'C:\..\..\proyecto\database\db_react.sql'
-            
-            05. Dar click a 'Importar'
-
-
-
-|||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
-|||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
-|||--------------------------------------------------------------------- 04. CÓDIGO DEL PROEYCTO ----------------------------------------------------------------------|||
+|||--------------------------------------------------------------------- 03. CÓDIGO DEL PROEYCTO ----------------------------------------------------------------------|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
