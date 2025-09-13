@@ -1,17 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Button, ToastAndroid } from 'react-native';
 import { RoundedButton } from '../../components/RoundedButton';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+import { useNavigation } from '@react-navigation/native';
 
 export const HomeScreen = () => {
+
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   return (
       <View style={styles.container}>
         <Image
-          source={require('../../../assets/chef.jpg')}
+          source={require('../../../../assets/chef.jpg')}
           style={styles.imageBackground}
         />
         <View style={styles.logoContainer}>
           <Image
-            source={require('../../../assets/logo.png')}
+            source={require('../../../../assets/logo.png')}
             style={styles.logoImage}
           />
           <Text style={styles.logoText}>FOOD APP</Text>
@@ -20,7 +26,7 @@ export const HomeScreen = () => {
           <Text style={styles.formText}>INGRESAR</Text>
           <View style={styles.formInput}>
             <Image style={styles.formIcon}
-              source={require('../../../assets/email.png')}
+              source={require('../../../../assets/email.png')}
             />
             <TextInput
               style={styles.formTextInput}
@@ -30,7 +36,7 @@ export const HomeScreen = () => {
           </View>
           <View style={styles.formInput}>
             <Image style={styles.formIcon}
-              source={require('../../../assets/password.png')}
+              source={require('../../../../assets/password.png')}
             />
             <TextInput
               style={styles.formTextInput}

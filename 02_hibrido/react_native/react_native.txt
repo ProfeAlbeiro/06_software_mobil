@@ -270,13 +270,6 @@
                     ⦿   Con el objeto de verificar posibles conflictos de puertos, que se puedan presentar más adelante en el desarrollo de la App,
                          puede listar los puertos utilizados en Windows desde la consola, con el comando 'netstat -ano'.
 
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 01.13.  Instalar otras dependencias: --------------------------------------------------------------------------------------------------------------------------------|
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-                    ⦿   PS C:\..\react_native> npm install -g react-native-cli
-                    ⦿   PS C:\..\react_native> npm install @react-navigation/native @react-navigation/native-stack
-
 
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
@@ -404,6 +397,17 @@
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 02.05.  Instalar otras dependencias: --------------------------------------------------------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+            01. Abrir otra Terminal de 'Visual Studio Code' digitar lo siguiente:
+
+                    ⦿   PS C:\..\..> cd frontend
+                    ⦿   PS C:\..\frontend> npm install -g react-native-cli
+                    ⦿   PS C:\..\frontend> npm install @react-navigation/native @react-navigation/native-stack
+                    ⦿   PS C:\..\frontend> npm i @react-navigation/stack
+
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.05.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
@@ -492,7 +496,80 @@
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.01.  Codificar el componente principal de la pantalla de inicio 'frontend/src/presentation/views/home/Home.tsx': -------------------------------------------------|
+|-- 03.01.  Codificar los estilos globales 'frontend/src/presentation/theme/AppTheme.tsx': ------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   export const MyColors = {
+                    02     background: '#EEEEEE',
+                    03     primary: '#F4991A',
+                    04     secondary: '# E14D2A',
+                    05   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 03.02.  Codificar el componente 'RoundedButton.tsx': ----------------------------------------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import React from 'react'
+                    02   import { TouchableOpacity, Text, StyleSheet } from 'react-native'
+                    03
+                    04   interface Props {
+                    05       text: string;
+                    06       onPress: () => void,
+                    07   }
+                    08
+                    09   export const RoundedButton = ({ text, onPress}: Props) => {
+                    10       return (
+                    11           <TouchableOpacity
+                    12               style={styles.RoundedButton}
+                    13               onPress={() => onPress()}
+                    14           >
+                    15               <Text style={styles.textButton} >{ text}</Text>
+                    16           </TouchableOpacity>
+                    17       )
+                    18   }
+                    19
+                    20   const styles = StyleSheet.create({
+                    21       RoundedButton: {
+                    22           width: '100%',
+                    23           height: 40,
+                    24           backgroundColor: 'orange',
+                    25           alignItems: 'center',
+                    26           justifyContent: 'center',
+                    27           borderRadius: 10,
+                    28       },
+                    29       textButton: {
+                    30           color: 'white',
+                    31       }
+                    32   });
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 03.03.  Codificar el componente principal de la pantalla de inicio 'frontend/src/presentation/views/home/Home.tsx': -------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import React from 'react';
@@ -632,66 +709,20 @@
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
-
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.02.  Codificar los estilos globales 'frontend/src/presentation/theme/AppTheme.tsx': ------------------------------------------------------------------------------|
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-                    01   export const MyColors = {
-                    02     background: '#EEEEEE',
-                    03     primary: '#F4991A',
-                    04     secondary: '# E14D2A',
-                    05   }
-
-                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
-                |                                                                                                                                         |
-                  EXPLICACIÓN:   
-                    
-                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
-
-                |---------------------------------------------------------------------------------------------------------------------------------------- |
-                
-                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
-                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
-                |                                                                                                                                         |
-                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
-
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.03.  Codificar el componente 'RoundedButton.tsx': ----------------------------------------------------------------------------------------------------------------|
+|-- 03.04.  Codificar la vista de Registro 'frontend/src/presentation/views/register/Register.tsx': ---------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import React from 'react'
-                    02   import { TouchableOpacity, Text, StyleSheet } from 'react-native'
-                    03
-                    04   interface Props {
-                    05       text: string;
-                    06       onPress: () => void,
-                    07   }
-                    08
-                    09   export const RoundedButton = ({ text, onPress}: Props) => {
-                    10       return (
-                    11           <TouchableOpacity
-                    12               style={styles.RoundedButton}
-                    13               onPress={() => onPress()}
-                    14           >
-                    15               <Text style={styles.textButton} >{ text}</Text>
-                    16           </TouchableOpacity>
-                    17       )
-                    18   }
-                    19
-                    20   const styles = StyleSheet.create({
-                    21       RoundedButton: {
-                    22           width: '100%',
-                    23           height: 40,
-                    24           backgroundColor: 'orange',
-                    25           alignItems: 'center',
-                    26           justifyContent: 'center',
-                    27           borderRadius: 10,
-                    28       },
-                    29       textButton: {
-                    30           color: 'white',
-                    31       }
-                    32   });
+                      import { View, Text } from 'react-native'
+
+                      export const RegisterScreen = () => {
+                        return (
+                          <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+                            <Text>RegisterScreen</Text>
+                          </View>
+                        )
+                      }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -708,31 +739,44 @@
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.04.  Modificar la raíz del proyecto 'frontend/App.tsx': ----------------------------------------------------------------------------------------------------------|
+|-- 03.05.  Modificar la raíz del proyecto 'frontend/App.tsx': ----------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import * as React from 'react';
-                      import { NavigationContainer } from '@react-navigation/native';
-                      import { createNativeStackNavigator } from '@react-navigation/native-stack';
-                      import { HomeScreen } from './src/presentation/views/home/Home';
-
-                      const Stack = createNativeStackNavigator();
-
-                      const App = () => {
-                        return (
-                          <NavigationContainer>
-                            <Stack.Navigator screenOptions={{headerShown: false}}>
-                              <Stack.Screen
-                                name="Home"
-                                component={HomeScreen}
-                              />
-                              {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
-                            </Stack.Navigator>
-                          </NavigationContainer>
-                        );
-                      };
-
-                      export default App;
+                    02   import { NavigationContainer } from '@react-navigation/native';
+                    03   import { createNativeStackNavigator } from '@react-navigation/native-stack';
+                    04   import { HomeScreen } from './src/views/home/home';
+                    05   import { RegisterScreen } from './src/views/register/Register';
+                    06
+                    07   export type RootStackParamList = {
+                    08     HomeScreen: undefined;
+                    09     RegisterScreen: undefined;
+                    10   }
+                    11
+                    12   const Stack = createNativeStackNavigator <RootStackParamList> ();
+                    13
+                    14   const App = () => {
+                    15     return (
+                    16       <NavigationContainer>
+                    17         <Stack.Navigator screenOptions={{headerShown: false}}>
+                    18           <Stack.Screen
+                    19             name="HomeScreen"
+                    20             component={HomeScreen}
+                    21           />
+                    22           <Stack.Screen
+                    23             name="RegisterScreen"
+                    24             component={RegisterScreen}
+                    25             options={{
+                    26               headerShown: true,
+                    27               title: "Registro",
+                    28             }}
+                    29           />
+                    30         </Stack.Navigator>
+                    31       </NavigationContainer>
+                    32     );
+                    33   };
+                    34
+                    35   export default App;
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
