@@ -512,7 +512,128 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.02.  Codificar los estilos del formulario de registro de 'frontend/src/presentation/views/register/Styles.tsx': --------------------------------------------------|
+|-- 03.02.  Codificar el componente para los controles de 'Texto' en 'frontend/src/presentation/components/CustomTextInput.tsx': ----------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import React from 'react';
+                    02   import { StyleSheet, View, Image, TextInput, KeyboardType } from 'react-native';
+                    03 
+                    04   interface Props {
+                    05     image: any;
+                    06     placeholder: string;
+                    07     value: string;
+                    08     keyboardType: KeyboardType;
+                    09     secureTextEntry?: boolean;
+                    10     property: string, onChangeText: (property: string, value:any) => void,
+                    11   }
+                    12 
+                    13   export const CustomTextInput = ({
+                    14     image,
+                    15     placeholder,
+                    16     value,
+                    17     keyboardType,
+                    18     secureTextEntry = false,
+                    19     property,
+                    20     onChangeText
+                    21   }: Props) => {
+                    22     return (
+                    23       <View style = { styles.formInput }>
+                    24         <Image style = { styles.formIcon } source = { image } />
+                    25         <TextInput style = { styles.formTextInput }
+                    26           placeholder = { placeholder }
+                    27           keyboardType = { keyboardType }
+                    28           value = { value }
+                    29           onChangeText = { text => onChangeText(property, text) }
+                    30           secureTextEntry = { secureTextEntry }
+                    31         />
+                    32       </View>
+                    33     )
+                    34   }
+                    35 
+                    36   const styles = StyleSheet.create({
+                    37     formIcon: {
+                    38       width: 25,
+                    39       height: 25,
+                    40       marginTop: 5,
+                    41     },
+                    42     formInput: {
+                    43       flexDirection: 'row',
+                    44       marginTop: 25,
+                    45     },
+                    46     formTextInput: {
+                    47       flex: 1,
+                    48       borderBottomWidth: 1,
+                    49       borderBottomColor: '#AAAAAA',
+                    50       marginLeft: 15,
+                    51     }
+                    52   })
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 03.03.  Codificar el componente para el control de 'Registro' en 'frontend/src/presentation/components/RoundedButton.tsx': ------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import React from 'react'
+                    02   import { TouchableOpacity, Text, StyleSheet } from 'react-native'
+                    03   import { MyColors } from '../theme/AppTheme';
+                    04 
+                    05   interface Props {
+                    06     text: string;
+                    07     onPress: () => void,
+                    08   }
+                    09 
+                    10   export const RoundedButton = ({ text, onPress}: Props) => {
+                    11     return (
+                    12       <TouchableOpacity
+                    13         style={styles.RoundedButton}
+                    14         onPress={() => onPress()}
+                    15       >
+                    16         <Text style={styles.textButton} >{ text}</Text>
+                    17       </TouchableOpacity>
+                    18     )
+                    19   }
+                    20 
+                    21   const styles = StyleSheet.create({
+                    22     RoundedButton: {
+                    23       width: '100%',
+                    24       height: 40,
+                    25       backgroundColor: MyColors.primary,
+                    26       alignItems: 'center',
+                    27       justifyContent: 'center',
+                    28       borderRadius: 10,
+                    29     },
+                    30     textButton: {
+                    31       color: 'white',
+                    32     }
+                    33   });
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 03.04.  Codificar los estilos del formulario de registro de 'frontend/src/presentation/views/register/Styles.tsx': --------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { StyleSheet } from "react-native";
@@ -605,42 +726,34 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.02.  Codificar el componente 'RoundedButton.tsx': ----------------------------------------------------------------------------------------------------------------|
+|-- 03.05.  Codificar la lógica del formulario de registro en 'frontend/src/presentation/views/register/ViewModel.tsx': -------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                    01   import React from 'react'
-                    02   import { TouchableOpacity, Text, StyleSheet } from 'react-native'
-                    03   import { MyColors } from '../theme/AppTheme';
-                    04 
-                    05   interface Props {
-                    06     text: string;
-                    07     onPress: () => void,
-                    08   }
-                    09 
-                    10   export const RoundedButton = ({ text, onPress}: Props) => {
-                    11     return (
-                    12       <TouchableOpacity
-                    13         style={styles.RoundedButton}
-                    14         onPress={() => onPress()}
-                    15       >
-                    16         <Text style={styles.textButton} >{ text}</Text>
-                    17       </TouchableOpacity>
-                    18     )
-                    19   }
-                    20 
-                    21   const styles = StyleSheet.create({
-                    22     RoundedButton: {
-                    23       width: '100%',
-                    24       height: 40,
-                    25       backgroundColor: MyColors.primary,
-                    26       alignItems: 'center',
-                    27       justifyContent: 'center',
-                    28       borderRadius: 10,
-                    29     },
-                    30     textButton: {
-                    31       color: 'white',
-                    32     }
-                    33   });
+                    01   import { useState } from "react";
+                    02 
+                    03   const RegisterViewModel = () => {
+                    04     const [values, setValues] = useState({
+                    05       name: '',
+                    06       lastname: '',
+                    07       phone: '',
+                    08       email: '',
+                    09       password: '',
+                    10       confirmPassword: '',
+                    11     });
+                    12     const onChange = (property: string, value: any) => {
+                    13       setValues({ ...values, [property]: value });
+                    14     };
+                    15     const register = () => {
+                    16       console.log(JSON.stringify(values));
+                    17     };
+                    18     return {
+                    19       ...values,
+                    20       onChange,
+                    21       register
+                    22     };
+                    23   }
+                    24 
+                    25   export default RegisterViewModel;
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -654,6 +767,59 @@
                     B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 03.06.  Codificar la lógica del formulario de registro en 'frontend/src/presentation/views/register/ViewModel.tsx': -------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { useState } from "react";
+
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 03.03.  Codificar el componente principal de la pantalla de inicio en 'frontend/src/presentation/views/home/Home.tsx': ----------------------------------------------|
