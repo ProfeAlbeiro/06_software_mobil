@@ -6,9 +6,10 @@
 |||                                                                                                                                                                    |||
 ||| --  01. ENTORNO DE DESARROLLO                                                                                                                                      |||
 ||| --  02. ESTRUCTURA DEL PROYECTO                                                                                                                                    |||
-||| --  03. VISTAS DEL PROYECTO                                                                                                                                        |||
-||| --  04. ENTRADA DE DATOS                                                                                                                                           |||
-||| --  05. LÓGICA DE DATOS                                                                                                                                           |||
+||| --  03. VISTA DEL FORMULARIO DE REGISTRO                                                                                                                           |||
+||| --  04. VISTA DEL FORMULARIO DE INICIO DE SESIÓN                                                                                                                   |||
+||| --  05. ENTRADA DE DATOS                                                                                                                                           |||
+||| --  06. LÓGICA DE DATOS                                                                                                                                            |||
 |||                                                                                                                                                                    |||
 ||| --  ANEXOS: TENER EN CUENTA                                                                                                                                        |||
 ||| --          AX_01.  Subir el Proyecto a Github                                                                                                                     |||
@@ -42,14 +43,10 @@
 ||| --      02.04.  Modificar el mensaje de inicio del proyecto en 'frontend/App.tsx'                                                                                  |||
 ||| --      02.05.  Instalar otras dependencias                                                                                                                        |||
 ||| --      02.06.  Crear la estructura de carpetas y los archivos del proyecto                                                                                        |||
-||| --  03. VISTAS DEL PROYECTO                                                                                                                                        |||
-||| --      03.01.  Codificar los estilos globales 'frontend/src/presentation/theme/AppTheme.tsx'                                                                      |||
-||| --      03.02.  Codificar el componente 'RoundedButton.tsx'                                                                                                        |||
-||| --      03.03.  Codificar el componente principal de la pantalla de inicio 'frontend/src/presentation/views/home/Home.tsx'                                         |||
-||| --      03.04.  Codificar la vista de Registro 'frontend/src/presentation/views/register/Register.tsx'                                                             |||
-||| --      03.05.  Modificar la raíz del proyecto 'frontend/App.tsx'                                                                                                  |||
-||| --  04. ENTRADA DE DATOS                                                                                                                                            |||
-||| --  05. LÓGICA DE DATOS                                                                                                                                            |||
+||| --  03. VISTA DEL FORMULARIO DE REGISTRO                                                                                                                           |||
+||| --  04. VISTA DEL FORMULARIO DE INICIO DE SESIÓN                                                                                                                   |||
+||| --  05. ENTRADA DE DATOS                                                                                                                                           |||
+||| --  06. LÓGICA DE DATOS                                                                                                                                            |||
 |||                                                                                                                                                                    |||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
@@ -269,8 +266,6 @@
 |-- 02.01.  Crear la carpeta raiz del proyecto: -------------------------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-            Para obtener los comandos TypeScript a ejecutar: https://reactnative.dev/docs/typescript.
-
             01. Crear en Windows una carpeta denominada 'proyecto'.
             
             02. Abrir la carpeta 'proyecto' en Visual Studio Code.
@@ -288,6 +283,14 @@
                          √ Downloaded and extracted project files.
                          > npm install
 
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  NOTA:   
+                    
+                    ⦿  Para obtener los comandos TypeScript a ejecutar: https://reactnative.dev/docs/typescript.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.02.  Ejecutar 'frontend' en el emulador de Android: --------------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -297,7 +300,11 @@
                     ⦿   PS C:\..\..> cd frontend
                     ⦿   PS C:\..\frontend> npm run android
 
-            NOTA:   ⦿   Tener en cuenta los siguientes comandos de 'Expo Go'. En la Terminal de 'Visual Studio Code' puede ejecutar:
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  NOTA:   
+                    
+                    ⦿   Tener en cuenta los siguientes comandos de 'Expo Go'. En la Terminal de 'Visual Studio Code' puede ejecutar:
 
                               › Using Expo Go
                               › Press s │ switch to development build
@@ -328,17 +335,18 @@
                               › shift+m │ more tools
                               › Press o │ open project code in your editor
                               › Press c │ show project QR
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
             02. Cambiar el nombre de la terminal a 'frontend', seleccionándola en la parte inferior derecha y presionando F2 / Rename...
             
             03. Cambiar el color de la terminal 'frontend', dando click derecho / Chage Color... / Seleccionar el color
 
-
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.03.  Ejecutar 'frontend' en un dispositivo físico Android: -------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-            01. En el dispositivo, ir a tienda, para Android es Play Store, buscar 'Expo go' e instalarlo.
+            01. En el dispositivo de Android, ir a la tienda de Play Store, buscar 'Expo go' e instalarlo.
 
             02. Abrir la aplicación 'Expo Go' en el dispositivo.
 
@@ -394,7 +402,6 @@
                     ⦿   PS C:\..\frontend> npm install -g react-native-cli
                     ⦿   PS C:\..\frontend> npm install @react-navigation/native @react-navigation/native-stack
                     ⦿   PS C:\..\frontend> npm i @react-navigation/stack
-
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.06.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
@@ -464,7 +471,6 @@
         (NO CREAR)      ├── package.json                                                # A. Manifiesto del proyecto frontend (nombre, dependencias, scripts).
                         └── tsconfig.json                                               # A. Configuración para el compilador de TypeScript.
 
-
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
                   NOTA:   
@@ -478,7 +484,7 @@
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
-|||--------------------------------------------------------------------- 03. VISTAS DEL PROYECTO ----------------------------------------------------------------------|||
+|||--------------------------------------------------------------- 03. VISTA DEL FORMULARIO DE REGISTRO ---------------------------------------------------------------|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
@@ -491,6 +497,99 @@
                     03     primary: '#F4991A',
                     04     secondary: '# E14D2A',
                     05   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 03.02.  Codificar los estilos del formulario de registro de 'frontend/src/presentation/views/register/Styles.tsx': --------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { StyleSheet } from "react-native";
+                    02 
+                    03   const RegisterStyles = StyleSheet.create({
+                    04     container: {
+                    05       flex: 1,
+                    06       backgroundColor: 'black',
+                    07     },
+                    08     imageBackground: {
+                    09       width: '100%',
+                    10       height: '100%',
+                    11       opacity: 0.7,
+                    12       bottom: '30%',
+                    13     },
+                    14     logoContainer: {
+                    15       position: 'absolute',
+                    16       alignSelf: 'center',
+                    17       top: '5%',
+                    18       alignItems: 'center',
+                    19     },
+                    20     logoImage: {
+                    21       width: 100,
+                    22       height: 100,
+                    23     },
+                    24     logoText: {
+                    25       color: 'white',
+                    26       textAlign: 'center',
+                    27       fontSize: 20,
+                    28       marginTop: 10,
+                    29       fontWeight: 'bold',
+                    30     },
+                    31     form: {
+                    32       width: '100%',
+                    33       height: '70%',
+                    34       backgroundColor: 'white',
+                    35       position: 'absolute',
+                    36       bottom: 0,
+                    37       borderTopLeftRadius: 40,
+                    38       borderTopRightRadius: 40,
+                    39       padding: 30,
+                    40     },
+                    41     formText: {
+                    42       fontWeight: 'bold',
+                    43       fontSize: 16,
+                    44     },
+                    45     formIcon: {
+                    46       width: 25,
+                    47       height: 25,
+                    48       marginTop: 5,
+                    49     },
+                    50     formInput: {
+                    51       flexDirection: 'row',
+                    52       marginTop: 25,
+                    53     },
+                    54     formTextInput: {
+                    55       flex: 1,
+                    56         borderBottomWidth: 1,
+                    57         borderBottomColor: '#AAAAAA',
+                    58         marginLeft: 15,
+                    59     },
+                    60     formRegister: {
+                    61       flexDirection: 'row',
+                    62       justifyContent: 'center',
+                    63       marginTop: 10,
+                    64     },
+                    65     formRegisterText: {
+                    66       fontStyle: 'italic',
+                    67       color: 'orange',
+                    68       borderBottomWidth: 1,
+                    69       borderBottomColor: 'orange',
+                    70       fontWeight: 'bold',
+                    71       marginLeft: 10,
+                    72     },
+                    73   });
+                    75 
+                    76   export default RegisterStyles;
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
