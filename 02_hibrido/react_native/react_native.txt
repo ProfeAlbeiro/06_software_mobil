@@ -412,7 +412,7 @@
                     ⦿   PS C:\..\frontend> npm install -g react-native-cli
                     ⦿   PS C:\..\frontend> npm install @react-navigation/native @react-navigation/native-stack
                     ⦿   PS C:\..\frontend> npm i @react-navigation/stack
-                    ⦿   PS C:\..\frontend> npm i npm i axios
+                    ⦿   PS C:\..\frontend> npm i axios
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.06.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
@@ -570,7 +570,7 @@
                     41     },
                     42     formInput: {
                     43       flexDirection: 'row',
-                    44       marginTop: 25,
+                    44       marginTop: 30,
                     45     },
                     46     formTextInput: {
                     47       flex: 1,
@@ -786,9 +786,9 @@
 
                     01   import React from 'react';
                     02   import styles from './Styles';
-                    03   import { Text, View, Image } from 'react-native';
-                    04   import { RoundedButton } from '../../components/RoundedButton';
-                    05   import { CustomTextInput } from '../../components/CustomTextInput';
+                    03   import { Text, View, Image, ScrollView } from 'react-native';
+                    04   import { CustomTextInput } from '../../components/CustomTextInput';
+                    05   import { RoundedButton } from '../../components/RoundedButton';
                     06   import useViewModel from './ViewModel';
                     07 
                     08   export const RegisterScreen = () => {
@@ -809,64 +809,67 @@
                     23           <Text style={styles.logoText}>FOOD APP</Text>
                     24         </View>
                     25         <View style={styles.form}>
-                    26           <Text style={styles.formText}>REGÍSTRATE</Text>
-                    27           <CustomTextInput
-                    28             image = {require('../../../../assets/user.png')}
-                    29             placeholder = 'Nombres'
-                    30             keyboardType = 'default'
-                    31             property = 'name'
-                    32             onChangeText = { onChange }
-                    33             value = { name }
-                    34           />
-                    35           <CustomTextInput
-                    36             image = {require('../../../../assets/my_user.png')}
-                    37             placeholder = 'Apellidos'
-                    38             keyboardType = 'default'
-                    39             property = 'lastname'
-                    40             onChangeText = { onChange }
-                    41             value = { lastname }
-                    42           />
-                    43           <CustomTextInput
-                    44             image = {require('../../../../assets/email.png')}
-                    45             placeholder = 'Correo Electrónico'
-                    46             keyboardType = 'email-address'
-                    47             property = 'email'
-                    48             onChangeText = { onChange }
-                    49             value = { email }
-                    50           />
-                    51           <CustomTextInput
-                    52             image = {require('../../../../assets/phone.png')}
-                    53             placeholder = 'Teléfono'
-                    54             keyboardType = 'numeric'
-                    55             property = 'phone'
-                    56             onChangeText = { onChange }
-                    57             value = { phone }
-                    58           />
-                    59           <CustomTextInput
-                    60             image = {require('../../../../assets/password.png')}
-                    61             placeholder = 'Contraseña'
-                    62             keyboardType = 'default'
-                    63             property = 'password'
-                    64             onChangeText = { onChange }
-                    65             value = { password }
-                    66             secureTextEntry = { true }
-                    67           />
-                    68           <CustomTextInput
-                    69             image = {require('../../../../assets/confirm_password.png')}
-                    70             placeholder = 'Confirmar Contraseña'
-                    71             keyboardType = 'default'
-                    72             property = 'confirmPassword'
-                    73             onChangeText = { onChange }
-                    74             value = { confirmPassword }
-                    75             secureTextEntry = { true }
-                    76           />
-                    77           <View style={{ marginTop: 10 }}>
-                    78             <RoundedButton text='CONFIRMAR' onPress={ () => register() } />
-                    79           </View>
-                    80         </View>
-                    81       </View>      
-                    82     );
-                    83   }
+                    26           <ScrollView>
+                    27             <Text style={styles.formText}>REGÍSTRATE</Text>
+                    28             <CustomTextInput
+                    29               image = {require('../../../../assets/user.png')}
+                    30               placeholder = 'Nombres'
+                    31               keyboardType = 'default'
+                    32               property = 'name'
+                    33               onChangeText = { onChange }
+                    34               value = { name }
+                    35             />
+                    36             <CustomTextInput
+                    37             image = {require('../../../../assets/my_user.png')}
+                    38               placeholder = 'Apellidos'
+                    39               keyboardType = 'default'
+                    40               property = 'lastname'
+                    41               onChangeText = { onChange }
+                    42               value = { lastname }
+                    43             />
+                    44             <CustomTextInput
+                    45               image = {require('../../../../assets/email.png')}
+                    46               placeholder = 'Correo Electrónico'
+                    47               keyboardType = 'email-address'
+                    48               property = 'email'
+                    49               onChangeText = { onChange }
+                    50               value = { email }
+                    51             />
+                    52             <CustomTextInput
+                    53               image = {require('../../../../assets/phone.png')}
+                    54               placeholder = 'Teléfono'
+                    55               keyboardType = 'numeric'
+                    56               property = 'phone'
+                    57               onChangeText = { onChange }
+                    58               value = { phone }
+                    59             />
+                    60             <CustomTextInput
+                    61               image = {require('../../../../assets/password.png')}
+                    62               placeholder = 'Contraseña'
+                    63               keyboardType = 'default'
+                    64               property = 'password'
+                    65               onChangeText = { onChange }
+                    66               value = { password }
+                    67               secureTextEntry = { true }
+                    68             />
+                    69             <CustomTextInput
+                    70               image = {require('../../../../assets/confirm_password.png')}
+                    71               placeholder = 'Confirmar Contraseña'
+                    72               keyboardType = 'default'
+                    73               property = 'confirmPassword'
+                    74               onChangeText = { onChange }
+                    75               value = { confirmPassword }
+                    76               secureTextEntry = { true }
+                    77             />
+                    78             <View style={{ marginTop: 10 }}>
+                    79               <RoundedButton text='CONFIRMAR' onPress={ () => register() } />
+                    80             </View>
+                    81           </ScrollView>
+                    82         </View>
+                    83       </View>
+                    84     );
+                    85     
+                    86   }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -1205,16 +1208,24 @@
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
-|||----------------------------------------------------------- 05. XXXXXXX -----------------------------------------------------------|||
+|||----------------------------------------------------------- 05. REGISTRAR UN USUARIO -----------------------------------------------------------|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 05.01.  Codificar XXXX EN  'frontend/src/XXXXXX': ----------------------------------------------|
+|-- 05.01.  Codificar las solicitudes HTTP en 'frontend/src/Data/sources/remote/api/ApiDelivery.tsx': -------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                    01   import { StyleSheet } from "react-native";
+                    01   import axios from "axios";
 
+                      const ApiDelivery = axios.create({
+                        baseURL: 'http://192.168.1.77:3000/api',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        }
+                      });
+
+                      export { ApiDelivery }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -1228,6 +1239,402 @@
                     B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.02.  Modificar los estados del formulario de 'registro' para incluir peticiones HTTP en 'frontend/src/presentation/views/register/ViewModel.tsx': ----------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { useState } from 'react';
+                      import { ApiDelivery } from '../../../data/sources/remote/api/ApiDelivery';
+
+                      const RegisterViewModel = () => {
+                          const [values, setValues] = useState({
+                            name: '',
+                            lastname: '',
+                            phone: '',
+                            email: '',
+                            password: '',
+                            confirmPassword: '',
+                          });
+                          const onChange = (property: string, value: any) => {
+                            setValues({ ...values, [property]: value });
+                          };
+                          const register = async () => {
+                            try {
+                              const response = await ApiDelivery.post('/users/create', values);
+                              console.log('RESPONSE: ' + JSON.stringify(response));
+                            } catch (error) {
+                              console.log('Error: ' + error);
+                            }
+                          };
+                          return {
+                            ...values,
+                            onChange,
+                            register
+                          };
+                      }
+
+                      export default RegisterViewModel;
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.03.  Crear un Usuario desde el formulario de registro: -----------------------------------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+            01. En la Terminal de 'Visual Studio Code' ejecutar nuevamente el emulador de android:
+                    
+                    ⦿   PS C:\..\frontend> npm run android
+
+            02. Diligenciar el formulario de registro y dar clic a 'CONFIRMAR'
+            
+            03. Verificar las tabla 'users' en la base de datos 'db_node' en http://localhost/phpmyadmin/
+
+
+
+|||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
+|||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
+|||----------------------------------------------------------- 06. AUTENTICACIÒN -----------------------------------------------------------|||
+|||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
+|||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 06.01.  Codificar la interface del modelo de 'usuario' en 'frontend/src/domain/entities/User.tsx': ------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   export interface User {
+                    02     id?: string;
+                    03     name: string;
+                    04     lastname: string;
+                    05     phone: string;
+                    06     email: string;
+                    07     password: string;
+                    08     confirmPassword: string;
+                    09   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 06.02.  Codificar la respuesta de la API en 'frontend/src/data/sources/remote/models/ResponseApiDelivery.tsx': ------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   export interface ResponseApiDelivery {
+                    02     success: boolean;
+                    03     message: string;
+                    04     data?: any;
+                    05     error?: any;
+                    06   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 06.03.  Codificar la lógica de autenticación de usuario en el 'dominio' en 'frontend/src/domain/repositories/AuthRepository.tsx': -----------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { User } from "../entities/User";
+                    02   import { ResponseApiDelivery } from "../../data/sources/remote/models/ResponseApiDelivery";  
+                    03 
+                    04   export interface AuthRepository {
+                    05     register(user: User): Promise<ResponseApiDelivery>;
+                    06   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 06.04.  Codificar la implementación de la autenticación de usuario en la 'data' en 'frontend/src/data/repositories/AuthRepository.tsx': -----------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { AxiosError } from "axios";
+                    02   import { User } from "../../domain/entities/User";
+                    03   import { AuthRepository } from "../../domain/repositories/AuthRepository";
+                    04   import { ApiDelivery } from "../sources/remote/api/ApiDelivery";
+                    05   import { ResponseApiDelivery } from "../sources/remote/models/ResponseApiDelivery";
+                    06 
+                    07   export class AuthRepositoryImpl implements AuthRepository {
+                    08     async register(user: User): Promise<ResponseApiDelivery> {
+                    09       try {
+                    10         const response = await ApiDelivery.post<ResponseApiDelivery>('./users/create', user);
+                    11         return Promise.resolve(response.data);
+                    12       } catch (error) {
+                    13         let e = (error as AxiosError);
+                    14         console.log('Error: ' + JSON.stringify(e.response?.data));
+                    15         const apiError: ResponseApiDelivery = JSON.parse(JSON.stringify(e.response?.data));
+                    16         return Promise.resolve(apiError);
+                    17       }
+                    18     }
+                    19   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 06.05.  Codificar la implementación de la autenticación de registro en 'frontend/src/domain/useCases/auth/RegisterAuth.tsx': ----------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { AuthRepositoryImpl } from "../../../data/repositories/AuthRepository";
+                    02   import { User } from "../../entities/User";
+                    03 
+                    04   const { register } = new AuthRepositoryImpl();
+                    05 
+                    06   export const RegisterAuthUseCase = async (user: User) => {
+                    07       return await register(user);
+                    08   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 06.06.  Modificar los estados del formulario de 'registro' para incluir autenticación en 'frontend/src/presentation/views/register/ViewModel.tsx': ------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { useState } from 'react';
+                    02   import { RegisterAuthUseCase } from '../../../domain/useCases/auth/RegisterAuth';
+                    03 
+                    04   const RegisterViewModel = () => {
+                    05       const [values, setValues] = useState({
+                    06         name: '',
+                    07         lastname: '',
+                    08         phone: '',
+                    09         email: '',
+                    10         password: '',
+                    11         confirmPassword: '',
+                    12       });
+                    13       const onChange = (property: string, value: any) => {
+                    14         setValues({ ...values, [property]: value });
+                    15       };
+                    16       const register = async () => {
+                    17         const response = await RegisterAuthUseCase(values);
+                    18         console.log('Result: ' + JSON.stringify(response));
+                    19       }
+                    20       return {
+                    21         ...values,
+                    22         onChange,
+                    23         register
+                    24       };
+                    25   }
+                    26 
+                    27   export default RegisterViewModel;
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+
+
+|||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
+|||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
+|||----------------------------------------------------------- 07. VALIDACIÓN DE FORMULARIOS -----------------------------------------------------------|||
+|||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
+|||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 07.01.  Codificar la lógica de autenticación de usuario en el 'dominio' en 'frontend/src/domain/repositories/AuthRepository.tsx': -----------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { User } from "../entities/User";
+                    02   import { ResponseApiDelivery } from "../../data/sources/remote/models/ResponseApiDelivery";
+                    03 
+                    04   export interface AuthRepository {
+                    05     login(email: string, password: string): Promise<ResponseApiDelivery>;
+                    06     register(user: User): Promise<ResponseApiDelivery>;
+                    07   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 07.02.  Modificar la implementación del 'login' en 'frontend/src/data/repositories/AuthRepository.tsx': -----------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { AxiosError } from "axios";
+                      import { User } from "../../domain/entities/User";
+                      import { AuthRepository } from "../../domain/repositories/AuthRepository";
+                      import { ApiDelivery } from "../sources/remote/api/ApiDelivery";
+                      import { ResponseApiDelivery } from "../sources/remote/models/ResponseApiDelivery";
+
+                      export class AuthRepositoryImpl implements AuthRepository {
+
+                        async register(user: User): Promise<ResponseApiDelivery> {
+                          try {
+                            const response = await ApiDelivery.post<ResponseApiDelivery>('./users/create', user);
+                            return Promise.resolve(response.data);
+                          } catch (error) {
+                            let e = (error as AxiosError);
+                            console.log('Error: ' + JSON.stringify(e.response?.data));
+                            const apiError: ResponseApiDelivery = JSON.parse(JSON.stringify(e.response?.data));
+                            return Promise.resolve(apiError);
+                          }
+                        }
+
+                        async login(email: string, password: string): Promise<ResponseApiDelivery> {
+                          try {
+                            const response = await ApiDelivery.post<ResponseApiDelivery>('/users/login', {
+                              email: email,
+                              password: password
+                            });
+                            return Promise.resolve(response.data);
+                          } catch (error) {
+                            let e = (error as AxiosError);
+                            console.log('error' + JSON.stringify(e.response?.data));
+                            const apiError:ResponseApiDelivery = JSON.parse(JSON.stringify(e.response?.data));
+                            return Promise.resolve(apiError);
+                          }
+                        }
+
+                      }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 07.03.  Codificar la implementación de la autenticación del 'login' en 'frontend/src/domain/useCases/auth/LoginAuth.tsx': -----------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                    01   import { AuthRepositoryImpl } from "../../../data/repositories/AuthRepository";
+                    02 
+                    03   const {login} = new AuthRepositoryImpl();
+                    04 
+                    05   export const LoginAuthUseCase = async (email: string, password: string) => {
+                    06     return await login(email, password);
+                    07   }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
@@ -1371,7 +1778,7 @@
 
             12. Comprobar que quedó de la forma correcta a través del navegador, con el siguiente enlace:
 
-                         http://localhost:8080/phpmyadmin/            
+                         http://localhost:8080/phpmyadmin/
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -1,17 +1,24 @@
-import React from 'react';
-import styles from './Styles';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, Image, TextInput, ToastAndroid, TouchableOpacity } from 'react-native';
 import { RoundedButton } from '../../components/RoundedButton';
-import { CustomTextInput } from '../../components/CustomTextInput';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 import { useNavigation } from '@react-navigation/native';
+import { CustomTextInput } from '../../components/CustomTextInput';
 import  useViewModel  from './ViewModel';
+import styles from './Styles';
 
 export const HomeScreen = () => {
 
-  const {email, password, onChange} = useViewModel();
+  const {email, password, errorMessage, onChange, login} = useViewModel();
+
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
+  useEffect(() => {
+    if (errorMessage !== '') {
+      ToastAndroid.show(errorMessage, ToastAndroid.LONG);
+    }
+  }, [errorMessage]);
 
   return (
     <View style={styles.container}>
@@ -46,10 +53,7 @@ export const HomeScreen = () => {
           secureTextEntry = { true }
         />
         <View style={{ marginTop: 30 }}>
-          <RoundedButton text='ENVIAR' onPress={() => {
-            console.log('Email: ' + email);
-            console.log('Password: ' + password);
-          }}/>
+          <RoundedButton text='ENVIAR' onPress={ () => login() } />
         </View>
         <View style={styles.formRegister}>
           <Text>¿No tienes cuenta?</Text>

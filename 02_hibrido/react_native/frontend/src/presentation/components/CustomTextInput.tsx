@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   formInput: {
     flexDirection: 'row',
-    marginTop: 25,
+    marginTop: 30,
   },
   formTextInput: {
     flex: 1,
