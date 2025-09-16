@@ -412,6 +412,7 @@
                     ⦿   PS C:\..\frontend> npm install -g react-native-cli
                     ⦿   PS C:\..\frontend> npm install @react-navigation/native @react-navigation/native-stack
                     ⦿   PS C:\..\frontend> npm i @react-navigation/stack
+                    ⦿   PS C:\..\frontend> npm i npm i axios
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.06.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
