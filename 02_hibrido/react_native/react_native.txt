@@ -481,7 +481,7 @@
         (NO CREAR)      ├── index.ts                                                    # A. Punto de entrada para la aplicación React Native (fuera de Expo).
         (NO CREAR)      ├── package-lock.json                                           # A. Registra las versiones exactas de las dependencias del frontend.
         (NO CREAR)      ├── package.json                                                # A. Manifiesto del proyecto frontend (nombre, dependencias, scripts).
-                        └── tsconfig.json                                               # A. Configuración para el compilador de TypeScript.
+        (NO CREAR)      └── tsconfig.json                                               # A. Configuración para el compilador de TypeScript.
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
