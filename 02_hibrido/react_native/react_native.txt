@@ -19,8 +19,8 @@
 ||| -- AUTOR:           ADAPTACIÓN hecha por el Instructor ALBEIRO RAMOS. SENA, 2025; del Taller CORREGIDO por el Instructor MAURICIO LARA. SENA, 2024;                |||
 |||                     elaborado por el Instructor MARCO LEÓN MORA. SENA, 2023.                                                                                       |||
 |||                                                                                                                                                                    |||
-||| -- BIBLIOGRAFÍA:    CORREGIDO:  https://github.com/ProfeAlbeiro/react_native/blob/main/sources/docs/taller_react_native.docx                                       |||
-|||                     ORIGINAL:   https://github.com/ProfeAlbeiro/react_native/blob/main/sources/docs/info_back/taller%20React%20Native_1.docx                       |||
+||| -- BIBLIOGRAFÍA:    CORREGIDO:  https://acortar.link/NGLST1                                                                                                        |||
+|||                     ORIGINAL:   https://acortar.link/Zc2sVZ                                                                                                        |||
 |||                                                                                                                                                                    |||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 |||                                                                                                                                                                    |||
