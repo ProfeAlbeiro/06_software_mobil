@@ -2408,6 +2408,55 @@
                                     └── models/                           #   Nueva carpeta.
                                         └── ResponseApiDelivery.tsx       #   Nuevo archivo.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             03. En el archivo 'my-app/src/Domain/entities/User.tsx' escribir el siguiente código:
 
                     01   export interface User {
@@ -2695,6 +2744,69 @@
                 necesaria para comprender la funcionalidad de cada módulo, el archivo en el que se codifica y la capa a la que pertenece
 
                 https://github.com/ProfeAlbeiro/react_native/blob/main/sources/img/paso_a_paso/08/08_05_organizaci%C3%B3n_x_m%C3%B3dulos.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 |--------------------------------------------------------------------------------------------------------------------------------------------------------|
