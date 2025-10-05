@@ -58,6 +58,8 @@
 ||| --      04.02.  Codificar los estados de los controles del formulario de inicio de sesión en 'frontend/src/presentation/views/home/ViewModel.tsx'                  |||
 ||| --      04.03.  Codificar formulario de inicio de sesión en 'frontend/src/presentation/views/home/Home.tsx'                                                        |||
 ||| --      04.04.  Modificar la raíz del proyecto en 'frontend/App.tsx'                                                                                               |||
+||| --  05. REGISTRAR UN USUARIO                                                                                                                                       |||
+||| --      05.01.                                        |||
 |||                                                                                                                                                                    |||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
@@ -368,26 +370,27 @@
 |-- 02.04.  Modificar el mensaje de inicio del proyecto en 'frontend/App.tsx': ------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                    01   import { StatusBar } from 'expo-status-bar';
-                    02   import { StyleSheet, Text, View } from 'react-native';
-                    03
-                    04   export default function App() {
-                    05     return (
-                    06       <View style={styles.container}>
-                    07         <Text>¡Hola Mundo!</Text>
-                    08         <StatusBar style="auto" />
-                    09       </View>
-                    10     );
-                    11   }
-                    12
-                    13   const styles = StyleSheet.create({
-                    14     container: {
-                    15       flex: 1,
-                    16       backgroundColor: '#fff',
-                    17       alignItems: 'center',
-                    18       justifyContent: 'center',
-                    19     },
-                    20   });
+                      1  import axios from "axios";
+                      1  import { StatusBar } from 'expo-status-bar';
+                      2  import { StyleSheet, Text, View } from 'react-native';
+                      3
+                      4  export default function App() {
+                      5    return (
+                      6      <View style={styles.container}>
+                      7        <Text>¡Hola Mundo!</Text>
+                      8        <StatusBar style="auto" />
+                      9      </View>
+                     10    );
+                     11  }
+                     12
+                     13  const styles = StyleSheet.create({
+                     14    container: {
+                     15      flex: 1,
+                     16      backgroundColor: '#fff',
+                     17      alignItems: 'center',
+                     18      justifyContent: 'center',
+                     19    },
+                     20  });
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -1218,16 +1221,17 @@
 |-- 05.01.  Codificar las solicitudes HTTP en 'frontend/src/Data/sources/remote/api/ApiDelivery.tsx': -------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                      import axios from "axios";
+                      1    import axios from "axios";
+                      2
+                      3    const ApiDelivery = axios.create({
+                      4      baseURL: 'http://192.168.56.1:3  0/api',
+                      5      headers: {
+                      6        'Content-Type': 'application/json'
+                      7      }
+                      8    });
+                      9
+                     10    export { ApiDelivery }
 
-                      const ApiDelivery = axios.create({
-                        baseURL: 'http://192.168.1.77:3000/api',
-                        headers: {
-                          'Content-Type': 'application/json'
-                        }
-                      });
-
-                      export { ApiDelivery }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -1244,40 +1248,19 @@
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 05.02.  Modificar los estados del formulario de 'registro' para incluir peticiones HTTP en 'frontend/src/presentation/views/register/ViewModel.tsx': ----------------|
+|-- 05.02.  Codificar la Entidad (Modelo) Usuario en 'frontend/src/domain/entities/User.tsx': ---------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                      import { useState } from 'react';
-                      import { ApiDelivery } from '../../../data/sources/remote/api/ApiDelivery';
+                      1    export interface User {
+                      2        id?: string;
+                      3        name: string;
+                      4        lastname: string;
+                      5        phone: string;
+                      6        email: string;
+                      7        password: string;
+                      8        confirmPassword: string;
+                      9    }
 
-                      const RegisterViewModel = () => {
-                          const [values, setValues] = useState({
-                            name: '',
-                            lastname: '',
-                            phone: '',
-                            email: '',
-                            password: '',
-                            confirmPassword: '',
-                          });
-                          const onChange = (property: string, value: any) => {
-                            setValues({ ...values, [property]: value });
-                          };
-                          const register = async () => {
-                            try {
-                              const response = await ApiDelivery.post('/users/create', values);
-                              console.log('RESPONSE: ' + JSON.stringify(response));
-                            } catch (error) {
-                              console.log('Error: ' + error);
-                            }
-                          };
-                          return {
-                            ...values,
-                            onChange,
-                            register
-                          };
-                      }
-
-                      export default RegisterViewModel;
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
