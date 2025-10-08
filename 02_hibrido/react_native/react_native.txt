@@ -9,6 +9,7 @@
 ||| --  03. VISTA DEL FORMULARIO DE REGISTRO                                                                                                                           |||
 ||| --  04. VISTA DEL FORMULARIO DE INICIO DE SESIÓN                                                                                                                   |||
 ||| --  05. REGISTRAR UN USUARIO                                                                                                                                       |||
+||| --  06. AUTENTICACIÒN DE FORMULARIOS                                                                                                                               |||
 |||                                                                                                                                                                    |||
 ||| --  ANEXOS: TENER EN CUENTA                                                                                                                                        |||
 ||| --          AX_01.  Subir el Proyecto a Github                                                                                                                     |||
@@ -17,8 +18,8 @@
 ||| --          AX_04.  Cambiar los puertos de 'MySQL' en 'XAMPP'                                                                                                      |||
 ||| --          AX_05.  Puesta en Marcha del Proyecto                                                                                                                  |||
 |||                                                                                                                                                                    |||
-||| -- AUTOR:           ADAPTACIÓN hecha por el Instructor ALBEIRO RAMOS. SENA, 2025; del Taller CORREGIDO por el Instructor MAURICIO LARA. SENA, 2024;                |||
-|||                     elaborado por el Instructor MARCO LEÓN MORA. SENA, 2023.                                                                                       |||
+||| -- AUTOR:           ADAPTACIÓN hecha por el Instructor ALBEIRO RAMOS. SENA, 2025; del Taller elaborado por el Instructor MARCO LEÓN MORA. SENA, 2023.              |||
+|||                                                                                                                                                                    |||
 |||                                                                                                                                                                    |||
 ||| -- BIBLIOGRAFÍA:    CORREGIDO:  https://acortar.link/NGLST1                                                                                                        |||
 |||                     ORIGINAL:   https://acortar.link/Zc2sVZ                                                                                                        |||
@@ -40,26 +41,35 @@
 ||| --      01.12.  Instalar Expo CLI                                                                                                                                  |||
 ||| --  02. ESTRUCTURA DEL PROYECTO                                                                                                                                    |||
 ||| --      02.01.  Crear la carpeta raiz del proyecto                                                                                                                 |||
-||| --      02.02.  Ejecutar 'frontend' en el emulador de Android                                                                                                      |||
-||| --      02.03.  Ejecutar 'frontend' en un dispositivo físico Android                                                                                               |||
-||| --      02.04.  Modificar el mensaje de inicio del proyecto en 'frontend/App.tsx'                                                                                  |||
+||| --      02.02.  Ejecutar 'frontend_mob' en el emulador de Android                                                                                                  |||
+||| --      02.03.  Ejecutar 'frontend_mob' en un dispositivo físico Android                                                                                           |||
+||| --      02.04.  Modificar el mensaje de inicio del proyecto en 'frontend_mob/App.tsx'                                                                              |||
 ||| --      02.05.  Instalar otras dependencias                                                                                                                        |||
 ||| --      02.06.  Crear la estructura de carpetas y los archivos del proyecto                                                                                        |||
 ||| --  03. VISTA DEL FORMULARIO DE REGISTRO                                                                                                                           |||
-||| --      03.01.  Codificar los estilos globales 'frontend/src/presentation/theme/AppTheme.tsx'                                                                      |||
-||| --      03.02.  Codificar el componente para los controles de 'Texto' en 'frontend/src/presentation/components/CustomTextInput.tsx'                                |||
-||| --      03.03.  Codificar el componente para el control de 'Registro' en 'frontend/src/presentation/components/RoundedButton.tsx'                                  |||
-||| --      03.04.  Codificar los estilos del formulario de registro de 'frontend/src/presentation/views/register/Styles.tsx'                                          |||
-||| --      03.05.  Codificar los estados de los controles del formulario de 'registro' en 'frontend/src/presentation/views/register/ViewModel.tsx'                    |||
-||| --      03.06.  Codificar formulario de registro en 'frontend/src/presentation/views/register/Register.tsx'                                                        |||
-||| --      03.07.  Modificar la raíz del proyecto en 'frontend/App.tsx'                                                                                               |||
+||| --      03.01.  Codificar los estilos globales 'frontend_mob/src/presentation/theme/AppTheme.tsx'                                                                  |||
+||| --      03.02.  Codificar el componente para los controles de 'Texto' en 'frontend_mob/src/presentation/components/CustomTextInput.tsx'                            |||
+||| --      03.03.  Codificar el componente para el control de 'Registro' en 'frontend_mob/src/presentation/components/RoundedButton.tsx'                              |||
+||| --      03.04.  Codificar los estilos del formulario de registro de 'frontend_mob/src/presentation/views/register/Styles.tsx'                                      |||
+||| --      03.05.  Codificar los estados de los controles del formulario de 'registro' en 'frontend_mob/src/presentation/views/register/ViewModel.tsx'                |||
+||| --      03.06.  Codificar formulario de registro en 'frontend_mob/src/presentation/views/register/Register.tsx'                                                    |||
+||| --      03.07.  Modificar la raíz del proyecto en 'frontend_mob/App.tsx'                                                                                           |||
 ||| --  04. VISTA DEL FORMULARIO DE INICIO DE SESIÓN                                                                                                                   |||
-||| --      04.01.  Codificar los estilos del formulario de inicio de sesión de 'frontend/src/presentation/views/home/Styles.tsx'                                      |||
-||| --      04.02.  Codificar los estados de los controles del formulario de inicio de sesión en 'frontend/src/presentation/views/home/ViewModel.tsx'                  |||
-||| --      04.03.  Codificar formulario de inicio de sesión en 'frontend/src/presentation/views/home/Home.tsx'                                                        |||
-||| --      04.04.  Modificar la raíz del proyecto en 'frontend/App.tsx'                                                                                               |||
+||| --      04.01.  Codificar los estilos del formulario de inicio de sesión de 'frontend_mob/src/presentation/views/home/Styles.tsx'                                  |||
+||| --      04.02.  Codificar los estados de los controles del formulario de inicio de sesión en 'frontend_mob/src/presentation/views/home/ViewModel.tsx'              |||
+||| --      04.03.  Codificar formulario de inicio de sesión en 'frontend_mob/src/presentation/views/home/Home.tsx'                                                    |||
+||| --      04.04.  Modificar la raíz del proyecto en 'frontend_mob/App.tsx'                                                                                           |||
 ||| --  05. REGISTRAR UN USUARIO                                                                                                                                       |||
-||| --      05.01.                                        |||
+||| --      05.01.  Codificar las solicitudes HTTP en 'frontend_mob/src/data/sources/remote/api/ApiDelivery.tsx'                                                       |||
+||| --      05.02.  Codificar la Entidad (Modelo) Usuario en 'frontend_mob/src/domain/entities/User.tsx'                                                               |||
+||| --      05.03.  Codificar ... en 'frontend_mob/src/data/sources/remote/models/ResponseApiDelivery.tsx'                                                             |||
+||| --      05.04.  Codificar ... en 'frontend_mob/src/domain/repositories/AuthRepository.tsx'                                                                         |||
+||| --      05.05.  Codificar ... en 'frontend_mob/src/data/repositories/AuthRepository.tsx'                                                                           |||
+||| --      05.06.  Codificar ... en 'frontend_mob/src/domain/useCases/auth/RegisterAuth.tsx'                                                                          |||
+||| --      05.07.  Codificar ... en 'frontend_mob/src/presentation/views/register/ViewModel.tsx'                                                                      |||
+||| --      05.08.  Codificar ... en 'frontend_mob/src/presentation/views/register/Register.tsx'                                                                       |||
+||| --      05.09.  Crear un Usuario desde el formulario de registro                                                                                                   |||
+||| --  06. AUTENTICACIÒN DE FORMULARIOS                                                                                                                               |||
 |||                                                                                                                                                                    |||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
@@ -293,7 +303,7 @@
                          Ok to proceed? (y) y
 
                          √ Choose a template: » Blank (TypeScript)
-                         √ What is your app named? ... frontend
+                         √ What is your app named? ... frontend_mob
                          √ Downloaded and extracted project files.
                          > npm install
 
@@ -306,13 +316,13 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 02.02.  Ejecutar 'frontend' en el emulador de Android: --------------------------------------------------------------------------------------------------------------|
+|-- 02.02.  Ejecutar 'frontend_mob' en el emulador de Android: --------------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
             01. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
 
-                    ⦿   PS C:\..\..> cd frontend
-                    ⦿   PS C:\..\frontend> npm run android
+                    ⦿   PS C:\..\..> cd frontend_mob
+                    ⦿   PS C:\..\frontend_mob> npm run android
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -352,12 +362,12 @@
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
-            02. Cambiar el nombre de la terminal a 'frontend', seleccionándola en la parte inferior derecha y presionando F2 / Rename...
+            02. Cambiar el nombre de la terminal a 'frontend_mob', seleccionándola en la parte inferior derecha y presionando F2 / Rename...
             
-            03. Cambiar el color de la terminal 'frontend', dando click derecho / Chage Color... / Seleccionar el color
+            03. Cambiar el color de la terminal 'frontend_mob', dando click derecho / Chage Color... / Seleccionar el color
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 02.03.  Ejecutar 'frontend' en un dispositivo físico Android: -------------------------------------------------------------------------------------------------------|
+|-- 02.03.  Ejecutar 'frontend_mob' en un dispositivo físico Android: -------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
             01. En el dispositivo de Android, ir a la tienda de Play Store, buscar 'Expo go' e instalarlo.
@@ -367,7 +377,7 @@
             03. Escanear el 'código QR' con el dispositivo. Los dos equipos deben estar en la misma red WiFi.
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 02.04.  Modificar el mensaje de inicio del proyecto en 'frontend/App.tsx': ------------------------------------------------------------------------------------------|
+|-- 02.04.  Modificar el mensaje de inicio del proyecto en 'frontend_mob/App.tsx': ------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1  import axios from "axios";
@@ -413,11 +423,11 @@
 
             01. Abrir otra Terminal de 'Visual Studio Code' (llamarla 'commands' y colocar el color que se desee) digitar lo siguiente:
 
-                    ⦿   PS C:\..\..> cd frontend
-                    ⦿   PS C:\..\frontend> npm install -g react-native-cli
-                    ⦿   PS C:\..\frontend> npm install @react-navigation/native @react-navigation/native-stack
-                    ⦿   PS C:\..\frontend> npm i @react-navigation/stack
-                    ⦿   PS C:\..\frontend> npm i axios
+                    ⦿   PS C:\..\..> cd frontend_mob
+                    ⦿   PS C:\..\frontend_mob> npm install -g react-native-cli
+                    ⦿   PS C:\..\frontend_mob> npm install @react-navigation/native @react-navigation/native-stack
+                    ⦿   PS C:\..\frontend_mob> npm i @react-navigation/stack
+                    ⦿   PS C:\..\frontend_mob> npm i axios
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.06.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
@@ -427,10 +437,10 @@
                                                                                                                                                       # A = Archivos
 
                     proyecto/                                                           # C. Proyecto móvil en React Native.
-                    └── frontend/                                                       # C. Carpeta raíz del proyecto en React Native.
+                    └── frontend_mob/                                                       # C. Carpeta raíz del proyecto en React Native.
         (NO CREAR)      ├── .expo/                                                      # C. Configuraciones del proyecto utilizados por la herramienta 'Expo'
         (NO CREAR)      ├── assets/                                                     # C. Recursos estáticos (imágenes, fuentes).
-        (NO CREAR)      ├── node_modules/                                               # C. Dependencias (librerías) instaladas para el frontend.
+        (NO CREAR)      ├── node_modules/                                               # C. Dependencias (librerías) instaladas para el frontend_mob.
                         ├── src/                                                        # C. Carpetas y archivos de la aplicación React Native.
                         │   ├── data/                                                   # C. Capa para obtención y manipulación de datos.
                         │   │   ├── repositories/                                       # C. Interfaces para acceder a diferentes fuentes de datos.
@@ -483,8 +493,8 @@
         (NO CREAR)      ├── app.json                                                    # A. Configuración utilizada por Expo para configurar la app.
         (NO CREAR)      ├── App.tsx                                                     # A. Raíz de la aplicación React Native (punto de entrada UI).
         (NO CREAR)      ├── index.ts                                                    # A. Punto de entrada para la aplicación React Native (fuera de Expo).
-        (NO CREAR)      ├── package-lock.json                                           # A. Registra las versiones exactas de las dependencias del frontend.
-        (NO CREAR)      ├── package.json                                                # A. Manifiesto del proyecto frontend (nombre, dependencias, scripts).
+        (NO CREAR)      ├── package-lock.json                                           # A. Registra las versiones exactas de las dependencias del frontend_mob.
+        (NO CREAR)      ├── package.json                                                # A. Manifiesto del proyecto frontend_mob (nombre, dependencias, scripts).
         (NO CREAR)      └── tsconfig.json                                               # A. Configuración para el compilador de TypeScript.
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -492,7 +502,7 @@
                   NOTA:   
                     
                     ⦿  Descargar de https://github.com/ProfeAlbeiro/06_software_mobil/tree/main/02_hibrido/react_native/resources/assets las imágenes 
-                        del proyecto, en la carpeta 'assets' del 'proyecto/frontend'.
+                        del proyecto, en la carpeta 'assets' del 'proyecto/frontend_mob'.
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
@@ -506,7 +516,7 @@
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.01.  Codificar los estilos globales 'frontend/src/presentation/theme/AppTheme.tsx': ------------------------------------------------------------------------------|
+|-- 03.01.  Codificar los estilos globales 'frontend_mob/src/presentation/theme/AppTheme.tsx': ------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   export const MyColors = {
@@ -529,7 +539,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.02.  Codificar el componente para los controles de 'Texto' en 'frontend/src/presentation/components/CustomTextInput.tsx': ----------------------------------------|
+|-- 03.02.  Codificar el componente para los controles de 'Texto' en 'frontend_mob/src/presentation/components/CustomTextInput.tsx': ----------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import React from 'react';
@@ -599,7 +609,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.03.  Codificar el componente para el control de 'Registro' en 'frontend/src/presentation/components/RoundedButton.tsx': ------------------------------------------|
+|-- 03.03.  Codificar el componente para el control de 'Registro' en 'frontend_mob/src/presentation/components/RoundedButton.tsx': ------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import React from 'react'
@@ -650,7 +660,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.04.  Codificar los estilos del formulario de registro de 'frontend/src/presentation/views/register/Styles.tsx': --------------------------------------------------|
+|-- 03.04.  Codificar los estilos del formulario de registro de 'frontend_mob/src/presentation/views/register/Styles.tsx': --------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { StyleSheet } from "react-native";
@@ -743,7 +753,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.05.  Codificar los estados de los controles del formulario de 'registro' en 'frontend/src/presentation/views/register/ViewModel.tsx': ----------------------------|
+|-- 03.05.  Codificar los estados de los controles del formulario de 'registro' en 'frontend_mob/src/presentation/views/register/ViewModel.tsx': ----------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { useState } from "react";
@@ -786,7 +796,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.06.  Codificar formulario de registro en 'frontend/src/presentation/views/register/Register.tsx': ----------------------------------------------------------------|
+|-- 03.06.  Codificar formulario de registro en 'frontend_mob/src/presentation/views/register/Register.tsx': ----------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import React from 'react';
@@ -891,7 +901,7 @@
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 03.07.  Modificar la raíz del proyecto en 'frontend/App.tsx': -------------------------------------------------------------------------------------------------------|
+|-- 03.07.  Modificar la raíz del proyecto en 'frontend_mob/App.tsx': -------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import * as React from 'react';
@@ -946,7 +956,7 @@
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 04.01.  Codificar los estilos del formulario de inicio de sesión de 'frontend/src/presentation/views/home/Styles.tsx': ----------------------------------------------|
+|-- 04.01.  Codificar los estilos del formulario de inicio de sesión de 'frontend_mob/src/presentation/views/home/Styles.tsx': ----------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { StyleSheet } from "react-native";
@@ -1038,7 +1048,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 04.02.  Codificar los estados de los controles del formulario de inicio de sesión en 'frontend/src/presentation/views/home/ViewModel.tsx': --------------------------|
+|-- 04.02.  Codificar los estados de los controles del formulario de inicio de sesión en 'frontend_mob/src/presentation/views/home/ViewModel.tsx': --------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { useState } from 'react';
@@ -1075,7 +1085,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 04.03.  Codificar formulario de inicio de sesión en 'frontend/src/presentation/views/home/Home.tsx': ----------------------------------------------------------------|
+|-- 04.03.  Codificar formulario de inicio de sesión en 'frontend_mob/src/presentation/views/home/Home.tsx': ----------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import React from 'react';
@@ -1157,7 +1167,7 @@
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 04.04.  Modificar la raíz del proyecto en 'frontend/App.tsx': -------------------------------------------------------------------------------------------------------|
+|-- 04.04.  Modificar la raíz del proyecto en 'frontend_mob/App.tsx': -------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import * as React from 'react';
@@ -1218,7 +1228,7 @@
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 05.01.  Codificar las solicitudes HTTP en 'frontend/src/Data/sources/remote/api/ApiDelivery.tsx': -------------------------------------------------------------------|
+|-- 05.01.  Codificar las solicitudes HTTP en 'frontend_mob/src/data/sources/remote/api/ApiDelivery.tsx': ---------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    import axios from "axios";
@@ -1248,7 +1258,7 @@
 
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 05.02.  Codificar la Entidad (Modelo) Usuario en 'frontend/src/domain/entities/User.tsx': ---------------------------------------------------------------------------|
+|-- 05.02.  Codificar la Entidad (Modelo) Usuario en 'frontend_mob/src/domain/entities/User.tsx': ---------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    export interface User {
@@ -1260,7 +1270,6 @@
                       7        password: string;
                       8        confirmPassword: string;
                       9    }
-
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -1276,27 +1285,295 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 05.03.  Crear un Usuario desde el formulario de registro: -----------------------------------------------------------------------------------------------------------|
+|-- 05.03.  Codificar ... en 'frontend_mob/src/data/sources/remote/models/ResponseApiDelivery.tsx': -------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                      1    export interface ResponseApiDelivery {
+                      2        success: boolean;
+                      3        message: string;
+                      4        data?: any;
+                      5        error?: any;
+                      6    }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.04.  Codificar ... en 'frontend_mob/src/domain/repositories/AuthRepository.tsx': ---------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                      1    import { User } from "../entities/User";
+                      2    import { ResponseApiDelivery } from "../../data/sources/remote/models/ResponseApiDelivery";
+                      3
+                      4    export interface AuthRepository {
+                      5        register(user: User): Promise<ResponseApiDelivery>;
+                      6    }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.05.  Codificar ... en 'frontend_mob/src/data/repositories/AuthRepository.tsx': -----------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                      1    import { AxiosError } from "axios";
+                      2    import { User } from "../../domain/entities/User";
+                      3    import { AuthRepository } from "../../domain/repositories/AuthRepository";
+                      4    import { ApiDelivery } from "../sources/remote/api/ApiDelivery";
+                      5    import { ResponseApiDelivery } from "../sources/remote/models/ResponseApiDelivery";
+                      6
+                      7    export class AuthRepositoryImpl implements AuthRepository {
+                      8        async register(user: User): Promise<ResponseApiDelivery> {
+                      9            try {
+                     10                const response = await ApiDelivery.post<ResponseApiDelivery>('./users/create', user);
+                     11                return Promise.resolve(response.data);
+                     12            } catch (error) {
+                     13                let e = (error as AxiosError);
+                     14                console.log('Error: ' + JSON.stringify(e.response?.data));
+                     15                const apiError: ResponseApiDelivery = JSON.parse(JSON.stringify(e.response?.data));
+                     16                return Promise.resolve(apiError);
+                     17            }
+                     18        }
+                     19    }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.06.  Codificar ... en 'frontend_mob/src/domain/useCases/auth/RegisterAuth.tsx': ----------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                      1    import { AuthRepositoryImpl } from "../../../data/repositories/AuthRepository";
+                      2    import { User } from "../../entities/User";
+                      3
+                      4    const { register } = new AuthRepositoryImpl();
+                      5
+                      6    export const RegisterAuthUseCase = async (user: User) => {
+                      7        return await register(user);
+                      8    }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.07.  Codificar ... en 'frontend_mob/src/presentation/views/register/ViewModel.tsx': ------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                      1    import React, { useState } from 'react';
+                      2    import { RegisterAuthUseCase } from '../../../domain/useCases/auth/RegisterAuth';
+                      3
+                      4    const RegisterViewModel = () => {
+                      5        const [values, setValues] = useState({
+                      6            name: '',
+                      7            lastname: '',
+                      8            phone: '',
+                      9            email: '',
+                     10            password: '',
+                     11            confirmPassword: '',
+                     12        });
+                     13
+                     14        const onChange = (property: string, value: any) => {
+                     15            setValues({ ...values, [property]: value });
+                     16        };
+                     17
+                     18        const register = async () => {
+                     19            const response = await RegisterAuthUseCase(values);
+                     20            console.log('Result: ' + JSON.stringify(response));
+                     21        };
+                     22
+                     23        return {
+                     24            ...values,
+                     25            onChange,
+                     26            register
+                     27        };
+                     28    }
+                     29
+                     30    export default RegisterViewModel;
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.08.  Codificar ... en 'frontend_mob/src/presentation/views/register/Register.tsx': -------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                      1    import React from 'react';
+                      2    import styles from './Styles';
+                      3    import { Text, View, Image, ScrollView } from 'react-native';
+                      4    import { CustomTextInput } from '../../components/CustomTextInput';
+                      5    import { RoundedButton } from '../../components/RoundedButton';
+                      6    import useViewModel from './ViewModel';
+                      7
+                      8    export const RegisterScreen = () => {
+                      9
+                     10        const { name, lastname, phone, email, password, confirmPassword, onChange, register } = useViewModel();
+                     11
+                     12        return (
+                     13            <View style={styles.container}>
+                     14                <Image
+                     15                    source={require('../../../../assets/chef.jpg')}
+                     16                    style={styles.imageBackground}
+                     17                />
+                     18                <View style={styles.logoContainer}>
+                     19                    <Image
+                     20                        source={require('../../../../assets/logo.png')}
+                     21                        style={styles.logoImage}
+                     22                    />
+                     23                    <Text style={styles.logoText}>FOOD APP</Text>
+                     24                </View>
+                     25                <View style={styles.form}>
+                     26                    <ScrollView>
+                     27                        <Text style={styles.formText}>REGÍSTRATE</Text>
+                     28                        <CustomTextInput
+                     29                            image={require('../../../../assets/user.png')}
+                     30                            placeholder='Nombres'
+                     31                            keyboardType='default'
+                     32                            property='name'
+                     33                            onChangeText={onChange}
+                     34                            value={name}
+                     35                        />
+                     36                        <CustomTextInput
+                     37                            image={require('../../../../assets/my_user.png')}
+                     38                            placeholder='Apellidos'
+                     39                            keyboardType='default'
+                     40                            property='lastname'
+                     41                            onChangeText={onChange}
+                     42                            value={lastname}
+                     43                        />
+                     44                        <CustomTextInput
+                     45                            image={require('../../../../assets/email.png')}
+                     46                            placeholder='Correo Electrónico'
+                     47                            keyboardType='email-address'
+                     48                            property='email'
+                     49                            onChangeText={onChange}
+                     50                            value={email}
+                     51                        />
+                     52                        <CustomTextInput
+                     53                            image={require('../../../../assets/phone.png')}
+                     54                            placeholder='Teléfono'
+                     55                            keyboardType='numeric'
+                     56                            property='phone'
+                     57                            onChangeText={onChange}
+                     58                            value={phone}
+                     59                        />
+                     60                        <CustomTextInput
+                     61                            image={require('../../../../assets/password.png')}
+                     62                            placeholder='Contraseña'
+                     63                            keyboardType='default'
+                     64                            property='password'
+                     65                            onChangeText={onChange}
+                     66                            value={password}
+                     67                            secureTextEntry={true}
+                     68                        />
+                     69                        <CustomTextInput
+                     70                            image={require('../../../../assets/confirm_password.png')}
+                     71                            placeholder='Confirmar Contraseña'
+                     72                            keyboardType='default'
+                     73                            property='confirmPassword'
+                     74                            onChangeText={onChange}
+                     75                            value={confirmPassword}
+                     76                            secureTextEntry={true}
+                     77                        />
+                     78                        <View style={{ marginTop: 10 }}>
+                     79                            <RoundedButton text='CONFIRMAR' onPress={() => register()} />
+                     80                        </View>
+                     81                    </ScrollView>
+                     82                </View>
+                     83            </View>
+                     84        );
+                     85
+                     86    }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:   
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 05.09.  Crear un Usuario desde el formulario de registro: -----------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
             01. En la Terminal de 'Visual Studio Code' ejecutar nuevamente el emulador de android:
                     
-                    ⦿   PS C:\..\frontend> npm run android
+                    ⦿   PS C:\..\frontend_mob> npm run android
 
             02. Diligenciar el formulario de registro y dar clic a 'CONFIRMAR'
             
             03. Verificar las tabla 'users' en la base de datos 'db_node' en http://localhost/phpmyadmin/
+          
+            04. Verificar que en la terminal aparezco lo siguiente:
+
+                        LOG  Result: {"success":true,"message":"Usuario creado correctamente","data":{"id":2,"name":"Edwin","lastname":"Villamil",
+                        "phone":"3143143141","email":"edwin@villamil.com","password":"12345","confirmPassword":"12345","role":"user"}}            
 
 
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
-|||----------------------------------------------------------- 06. AUTENTICACIÒN -----------------------------------------------------------|||
+|||----------------------------------------------------------------- 06. AUTENTICACIÒN DE FORMULARIOS -----------------------------------------------------------------|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 06.01.  Codificar la interface del modelo de 'usuario' en 'frontend/src/domain/entities/User.tsx': ------------------------------------------------------------------|
+|-- 06.01.  Codificar la interface del modelo de 'usuario' en 'frontend_mob/src/domain/entities/User.tsx': ------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   export interface User {
@@ -1323,7 +1600,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 06.02.  Codificar la respuesta de la API en 'frontend/src/data/sources/remote/models/ResponseApiDelivery.tsx': ------------------------------------------------------|
+|-- 06.02.  Codificar la respuesta de la API en 'frontend_mob/src/data/sources/remote/models/ResponseApiDelivery.tsx': ------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   export interface ResponseApiDelivery {
@@ -1347,7 +1624,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 06.03.  Codificar la lógica de autenticación de usuario en el 'dominio' en 'frontend/src/domain/repositories/AuthRepository.tsx': -----------------------------------|
+|-- 06.03.  Codificar la lógica de autenticación de usuario en el 'dominio' en 'frontend_mob/src/domain/repositories/AuthRepository.tsx': -----------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { User } from "../entities/User";
@@ -1371,7 +1648,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 06.04.  Codificar la implementación de la autenticación de usuario en la 'data' en 'frontend/src/data/repositories/AuthRepository.tsx': -----------------------------|
+|-- 06.04.  Codificar la implementación de la autenticación de usuario en la 'data' en 'frontend_mob/src/data/repositories/AuthRepository.tsx': -----------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { AxiosError } from "axios";
@@ -1408,7 +1685,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 06.05.  Codificar la implementación de la autenticación de registro en 'frontend/src/domain/useCases/auth/RegisterAuth.tsx': ----------------------------------------|
+|-- 06.05.  Codificar la implementación de la autenticación de registro en 'frontend_mob/src/domain/useCases/auth/RegisterAuth.tsx': ----------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { AuthRepositoryImpl } from "../../../data/repositories/AuthRepository";
@@ -1434,7 +1711,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 06.06.  Modificar los estados del formulario de 'registro' para incluir autenticación en 'frontend/src/presentation/views/register/ViewModel.tsx': ------------------|
+|-- 06.06.  Modificar los estados del formulario de 'registro' para incluir autenticación en 'frontend_mob/src/presentation/views/register/ViewModel.tsx': ------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { useState } from 'react';
@@ -1487,7 +1764,7 @@
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 07.01.  Codificar la lógica de autenticación de usuario en el 'dominio' en 'frontend/src/domain/repositories/AuthRepository.tsx': -----------------------------------|
+|-- 07.01.  Codificar la lógica de autenticación de usuario en el 'dominio' en 'frontend_mob/src/domain/repositories/AuthRepository.tsx': -----------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { User } from "../entities/User";
@@ -1512,7 +1789,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 07.02.  Modificar la implementación del 'login' en 'frontend/src/data/repositories/AuthRepository.tsx': -----------------------------|
+|-- 07.02.  Modificar la implementación del 'login' en 'frontend_mob/src/data/repositories/AuthRepository.tsx': -----------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { AxiosError } from "axios";
@@ -1566,7 +1843,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 07.03.  Codificar la implementación de la autenticación del 'login' en 'frontend/src/domain/useCases/auth/LoginAuth.tsx': -----------------------------|
+|-- 07.03.  Codificar la implementación de la autenticación del 'login' en 'frontend_mob/src/domain/useCases/auth/LoginAuth.tsx': -----------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                     01   import { AuthRepositoryImpl } from "../../../data/repositories/AuthRepository";

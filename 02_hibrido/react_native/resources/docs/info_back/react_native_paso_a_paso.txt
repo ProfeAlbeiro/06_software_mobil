@@ -2283,33 +2283,6 @@
                           05   }
 
                     ⦿   Verificar en la DB que se haya creado el usuario.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 |--------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 07.04.  Creando Usuarios desde la App: --------------------------------------------------------------------------------------------------------------|
 |--------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2329,41 +2302,6 @@
                                         └── ApiDelivery.tsx     #   Nuevo archivo.
 
             NOTA:   ⦿   No olvide eliminar el archivo 'delete.txt'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             03. En el archivo 'ApiDelivery.tsx', digite el siguiente código:
 
@@ -2467,55 +2405,6 @@
                                     │   └── ApiDelivery.tsx               #   Nuevo archivo.
                                     └── models/                           #   Nueva carpeta.
                                         └── ResponseApiDelivery.tsx       #   Nuevo archivo.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             03. En el archivo 'my-app/src/Domain/entities/User.tsx' escribir el siguiente código:
 
@@ -2804,36 +2693,6 @@
                 necesaria para comprender la funcionalidad de cada módulo, el archivo en el que se codifica y la capa a la que pertenece
 
                 https://github.com/ProfeAlbeiro/react_native/blob/main/sources/img/paso_a_paso/08/08_05_organizaci%C3%B3n_x_m%C3%B3dulos.png
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
