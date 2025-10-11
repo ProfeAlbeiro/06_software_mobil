@@ -2637,6 +2637,7 @@
             12. Abrir otra terminal en 'Visual Studio Code' y ejecutar los siguientes comandos:
 
                     ⦿   PS C:\..> cd frontend_mob
+                    ⦿   PS C:\..\react_native> npm install -g expo-cli exp                    
                     ⦿   PS C:\..\frontend_mob> npm install
                     ⦿   PS C:\..\frontend_mob> npm run android
 
