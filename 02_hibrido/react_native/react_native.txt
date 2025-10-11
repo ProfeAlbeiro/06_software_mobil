@@ -460,7 +460,7 @@
                                                                                                                                                       # A = Archivos
 
                     proyecto/                                                           # C. Proyecto móvil en React Native.
-                    └── frontend_mob/                                                       # C. Carpeta raíz del proyecto en React Native.
+                    └── frontend_mob/                                                   # C. Carpeta raíz del proyecto en React Native.
         (NO CREAR)      ├── .expo/                                                      # C. Configuraciones del proyecto utilizados por la herramienta 'Expo'
         (NO CREAR)      ├── assets/                                                     # C. Recursos estáticos (imágenes, fuentes).
         (NO CREAR)      ├── node_modules/                                               # C. Dependencias (librerías) instaladas para el frontend_mob.
