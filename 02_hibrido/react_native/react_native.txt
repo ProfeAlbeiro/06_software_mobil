@@ -282,11 +282,11 @@
 
             01. En la terminal de 'Visual Studio Code', instalar Expo CLI:
 
-                    ⦿   PS C:\..\react_native> npm install -g expo-cli exp
+                    ⦿   PS C:\..\> npm install -g expo-cli exp
 
             02. Verificar la versión de expo CLI en la terminal de 'Visual Studio Code':
 
-                    ⦿   PS C:\..\react_native> expo  --version
+                    ⦿   PS C:\..\> expo  --version
 
                     ⦿   Si ya tiene un proyecto, reemplace en el archivo “package.json”:
 
@@ -295,7 +295,7 @@
 
                     ⦿   En caso de existir problema, puede desinstalar expo CLI en la terminal de 'Visual Studio Code':
 
-                            ⦿   PS C:\..\react_native> npm uninstall -g expo-cli
+                            ⦿   PS C:\..\> npm uninstall -g expo-cli
 
                     ⦿   Con el objeto de verificar posibles conflictos de puertos, que se puedan presentar más adelante en el desarrollo de la App,
                          puede listar los puertos utilizados en Windows desde la consola, con el comando 'netstat -ano'.
@@ -318,7 +318,7 @@
 
             03. En la terminal de 'Visual Studio Code', crear el proyecto:
 
-                    ⦿   PS PS C:\..\> npx create-expo-app --template
+                    ⦿   PS PS C:\..\> npx create-expo-app frontend_mob --template blank-typescript
 
                          Need to install the following packages:
                          create-expo-app@3.2.0
@@ -445,12 +445,13 @@
 
             01. Abrir otra Terminal de 'Visual Studio Code' (llamarla 'commands' y colocar el color que se desee) digitar lo siguiente:
 
-                    ⦿   PS C:\..\..> cd frontend_mob
-                    ⦿   PS C:\..\frontend_mob> npm install -g react-native-cli
-                    ⦿   PS C:\..\frontend_mob> npm install @react-navigation/native @react-navigation/native-stack
-                    ⦿   PS C:\..\frontend_mob> npm i @react-navigation/stack
-                    ⦿   PS C:\..\frontend_mob> npm i @react-native-async-storage/async-storage
-                    ⦿   PS C:\..\frontend_mob> npm i axios
+                    ⦿   PS C:\..\..> cd frontend_mob                                        
+                    ⦿   PS C:\..\frontend_mob> npx expo start -c
+                    ⦿   PS C:\..\frontend_mob> npx expo install @react-navigation/native @react-navigation/native-stack
+                    ⦿   PS C:\..\frontend_mob> npx expo install react-native-screens react-native-safe-area-context
+                    ⦿   PS C:\..\frontend_mob> npx expo install @react-native-async-storage/async-storage
+                    ⦿   PS C:\..\frontend_mob> npm install axios
+
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |-- 02.06.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
