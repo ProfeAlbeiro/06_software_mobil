@@ -316,7 +316,7 @@
             
             02. Abrir la carpeta 'proyecto' en Visual Studio Code.
 
-            03. En la terminal de 'Visual Studio Code', crear el proyecto:
+            03. Abrir una terminal de 'Visual Studio Code', crear el proyecto:
 
                     ⦿   PS PS C:\..\> npx create-expo-app frontend_mob --template blank-typescript
 
@@ -443,9 +443,10 @@
 |-- 02.05.  Instalar otras dependencias: --------------------------------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-            01. Abrir otra Terminal de 'Visual Studio Code' (llamarla 'commands' y colocar el color que se desee) digitar lo siguiente:
-
-                    ⦿   PS C:\..\..> cd frontend_mob                                        
+            01. En la Terminal de 'Visual Studio Code', parar el proyecto presionando las teclas 'CTRL + C'.            
+            
+            02. Abrir otra Terminal de 'Visual Studio Code' (llamarla 'commands' y colocar el color que se desee) digitar lo siguiente:
+                    
                     ⦿   PS C:\..\frontend_mob> npx expo start -c
                     ⦿   PS C:\..\frontend_mob> npx expo install @react-navigation/native @react-navigation/native-stack
                     ⦿   PS C:\..\frontend_mob> npx expo install react-native-screens react-native-safe-area-context
