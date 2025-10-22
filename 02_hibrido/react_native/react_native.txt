@@ -85,12 +85,13 @@
 ||| --      07.10.  Modificar ... en 'frontend_mob/src/presentation/views/home/ViewModel.tsx'                                                                          |||
 ||| --      07.11.  Modificar ... en 'frontend_mob/src/presentation/views/home/Home.tsx'                                                                               |||
 ||| --  08. CERRAR SESIÓN                                                                                                                                              |||
-||| --      08.01.  Codificar ... en 'frontend_mob/src/presentation/hooks/useUserLocal.tsx'                                                                            |||
-||| --      08.02.  Codificar ... en 'frontend_mob/src/presentation/views/profile/info/ViewModel.tsx'                                                                  |||
-||| --      08.03.  Codificar ... en 'frontend_mob/src/presentation/views/profile/info/ProfileInfo.tsx'                                                                |||
-||| --      08.04.  Modificar ... en 'frontend_mob/src/presentation/views/home/ViewModel.tsx'                                                                          |||
-||| --      08.05.  Modificar ... en 'frontend_mob/src/presentation/views/home/Home.tsx'                                                                               |||
-||| --      08.06.  Modificar ... en 'frontend_mob/App.tsx'                                                                                                            |||
+||| --      08.01.  Codificar ... en 'frontend_mob/src/domain/useCases/UserLocal/RemoveUserLocal.tsx'                                                                  |||
+||| --      08.02.  Codificar ... en 'frontend_mob/src/presentation/hooks/useUserLocal.tsx'                                                                            |||
+||| --      08.03.  Codificar ... en 'frontend_mob/src/presentation/views/profile/info/ViewModel.tsx'                                                                  |||
+||| --      08.04.  Codificar ... en 'frontend_mob/src/presentation/views/profile/info/ProfileInfo.tsx'                                                                |||
+||| --      08.05.  Modificar ... en 'frontend_mob/src/presentation/views/home/ViewModel.tsx'                                                                          |||
+||| --      08.06.  Modificar ... en 'frontend_mob/src/presentation/views/home/Home.tsx'                                                                               |||
+||| --      08.07.  Modificar ... en 'frontend_mob/App.tsx'                                                                                                            |||
 |||                                                                                                                                                                    |||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
@@ -1274,6 +1275,13 @@
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 04.05.  Ejecutar la app: --------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+            01. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
+                    
+                    ⦿   PS C:\..\frontend_mob> npm run android
 
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
@@ -1425,17 +1433,17 @@
                       5    import { ResponseApiDelivery } from "../sources/remote/models/ResponseApiDelivery";
                       6
                       7    export class AuthRepositoryImpl implements AuthRepository {
-                      8        async register(user: User): Promise<ResponseApiDelivery> {
-                      9            try {
-                     10                const response = await ApiDelivery.post<ResponseApiDelivery>('./users/create', user);
-                     11                return Promise.resolve(response.data);
-                     12            } catch (error) {
-                     13                let e = (error as AxiosError);
-                     14                console.log('Error: ' + JSON.stringify(e.response?.data));
-                     15                const apiError: ResponseApiDelivery = JSON.parse(JSON.stringify(e.response?.data));
-                     16                return Promise.resolve(apiError);
-                     17            }
-                     18        }
+                      8      async register(user: User): Promise<ResponseApiDelivery> {
+                      9        try {
+                     10          const response = await ApiDelivery.post<ResponseApiDelivery>('./users/create', user);
+                     11          return Promise.resolve(response.data);
+                     12        } catch (error) {
+                     13          let e = (error as AxiosError);
+                     14          console.log('Error: ' + JSON.stringify(e.response?.data));
+                     15          const apiError: ResponseApiDelivery = JSON.parse(JSON.stringify(e.response?.data));
+                     16          return Promise.resolve(apiError);
+                     17        }
+                     18      }
                      19    }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -1461,7 +1469,7 @@
                       4    const { register } = new AuthRepositoryImpl();
                       5
                       6    export const RegisterAuthUseCase = async (user: User) => {
-                      7        return await register(user);
+                      7      return await register(user);
                       8    }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -1591,7 +1599,7 @@
                       7
                       8    export const RegisterScreen = () => {
                       9
-                     10      const {name, lastname, phone, email, password, confirmPassword, errorMessage, onChange, register} = useViewModel();
+                     10      const { name, lastname, phone, email, password, confirmPassword, errorMessage, onChange, register } = useViewModel();
                      11
                      12      useEffect(() => {
                      13        if (errorMessage !== '')
@@ -1600,76 +1608,76 @@
                      16
                      17      return (
                      18        <View style={styles.container}>
-                     19            <Image
-                     20              source={require('../../../../assets/chef.jpg')}
-                     21              style={styles.imageBackground}
-                     22            />
-                     23            <View style={styles.logoContainer}>
-                     24              <Image
-                     25                source={require('../../../../assets/logo.png')}
-                     26                style={styles.logoImage}
-                     27              />
-                     28              <Text style={styles.logoText}>FOOD APP</Text>
-                     29            </View>
-                     30            <View style={styles.form}>
-                     31              <ScrollView>
-                     32                <Text style={styles.formText}>REGÍSTRATE</Text>
-                     33                <CustomTextInput
-                     34                  image = {require('../../../../assets/user.png')}
-                     35                  placeholder = 'Nombres'
-                     36                  keyboardType = 'default'
-                     37                  property = 'name'
-                     38                  onChangeText = { onChange }
-                     39                  value = { name }
-                     40                />
-                     41                <CustomTextInput
-                     42                  image = {require('../../../../assets/my_user.png')}
-                     43                  placeholder = 'Apellidos'
-                     44                  keyboardType = 'default'
-                     45                  property = 'lastname'
-                     46                  onChangeText = { onChange }
-                     47                  value = { lastname }
-                     48                />
-                     49                <CustomTextInput
-                     50                  image = {require('../../../../assets/email.png')}
-                     51                  placeholder = 'Correo Electrónico'
-                     52                  keyboardType = 'email-address'
-                     53                  property = 'email'
-                     54                  onChangeText = { onChange }
-                     55                  value = { email }
-                     56                />
-                     57                <CustomTextInput
-                     58                  image = {require('../../../../assets/phone.png')}
-                     59                  placeholder = 'Teléfono'
-                     60                  keyboardType = 'numeric'
-                     61                  property = 'phone'
-                     62                  onChangeText = { onChange }
-                     63                  value = { phone }
-                     64                />
-                     65                <CustomTextInput
-                     66                  image = {require('../../../../assets/password.png')}
-                     67                  placeholder = 'Contraseña'
-                     68                  keyboardType = 'default'
-                     69                  property = 'password'
-                     70                  onChangeText = { onChange }
-                     71                  value = { password }
-                     72                  secureTextEntry = { true }
-                     73                />
-                     74                <CustomTextInput
-                     75                  image = {require('../../../../assets/confirm_password.png')}
-                     76                  placeholder = 'Confirmar Contraseña'
-                     77                  keyboardType = 'default'
-                     78                  property = 'confirmPassword'
-                     79                  onChangeText = { onChange }
-                     80                  value = { confirmPassword }
-                     81                  secureTextEntry = { true }
-                     82                />
-                     83                <View style={{ marginTop: 10 }}>
-                     84                  <RoundedButton text='CONFIRMAR' onPress={ () => register() } />
-                     85                </View>
-                     86              </ScrollView>
-                     87            </View>
-                     88          </View>
+                     19          <Image
+                     20            source={require('../../../../assets/chef.jpg')}
+                     21            style={styles.imageBackground}
+                     22          />
+                     23          <View style={styles.logoContainer}>
+                     24            <Image
+                     25              source={require('../../../../assets/logo.png')}
+                     26              style={styles.logoImage}
+                     27            />
+                     28            <Text style={styles.logoText}>FOOD APP</Text>
+                     29          </View>
+                     30          <View style={styles.form}>
+                     31            <ScrollView>
+                     32              <Text style={styles.formText}>REGÍSTRATE</Text>
+                     33              <CustomTextInput
+                     34                image={require('../../../../assets/user.png')}
+                     35                placeholder='Nombres'
+                     36                keyboardType='default'
+                     37                property='name'
+                     38                onChangeText={onChange}
+                     39                value={name}
+                     40              />
+                     41              <CustomTextInput
+                     42                image={require('../../../../assets/my_user.png')}
+                     43                placeholder='Apellidos'
+                     44                keyboardType='default'
+                     45                property='lastname'
+                     46                onChangeText={onChange}
+                     47                value={lastname}
+                     48              />
+                     49              <CustomTextInput
+                     50                image={require('../../../../assets/email.png')}
+                     51                placeholder='Correo Electrónico'
+                     52                keyboardType='email-address'
+                     53                property='email'
+                     54                onChangeText={onChange}
+                     55                value={email}
+                     56              />
+                     57              <CustomTextInput
+                     58                image={require('../../../../assets/phone.png')}
+                     59                placeholder='Teléfono'
+                     60                keyboardType='numeric'
+                     61                property='phone'
+                     62                onChangeText={onChange}
+                     63                value={phone}
+                     64              />
+                     65              <CustomTextInput
+                     66                image={require('../../../../assets/password.png')}
+                     67                placeholder='Contraseña'
+                     68                keyboardType='default'
+                     69                property='password'
+                     70                onChangeText={onChange}
+                     71                value={password}
+                     72                secureTextEntry={true}
+                     73              />
+                     74              <CustomTextInput
+                     75                image={require('../../../../assets/confirm_password.png')}
+                     76                placeholder='Confirmar Contraseña'
+                     77                keyboardType='default'
+                     78                property='confirmPassword'
+                     79                onChangeText={onChange}
+                     80                value={confirmPassword}
+                     81                secureTextEntry={true}
+                     82              />
+                     83              <View style={{ marginTop: 10 }}>
+                     84                <RoundedButton text='CONFIRMAR' onPress={() => register()} />
+                     85              </View>
+                     86            </ScrollView>
+                     87          </View>
+                     88        </View>
                      89      );
                      90    }
 
@@ -1698,10 +1706,19 @@
             
             03. Verificar las tabla 'users' en la base de datos 'db_node' en http://localhost/phpmyadmin/
           
-            04. Verificar que en la terminal aparezco lo siguiente:
+            04. Verificar que en la terminal aparezca lo siguiente:
 
                         LOG  Result: {"success":true,"message":"Usuario creado correctamente","data":{"id":2,"name":"Edwin","lastname":"Villamil",
                         "phone":"3143143141","email":"edwin@villamil.com","password":"12345","confirmPassword":"12345","role":"user"}}            
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 06.09.  Ejecutar la app: --------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+            01. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
+                    
+                    ⦿   PS C:\..\frontend_mob> npm run android
+
 
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
@@ -1715,14 +1732,14 @@
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    export interface User {
-                      2        id?: string;
-                      3        name: string;
-                      4        lastname: string;
-                      5        phone: string;
-                      6        email: string;
-                      7        password: string;
-                      8        confirmPassword: string;
-                      9        session_token?: string;
+                      2      id?: string;
+                      3      name: string;
+                      4      lastname: string;
+                      5      phone: string;
+                      6      email: string;
+                      7      password: string;
+                      8      confirmPassword: string;
+                      9      session_token?: string;
                      10    }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -1745,9 +1762,9 @@
                       1    import { User } from "../entities/User";
                       2
                       3    export interface UserLocalRepository {
-                      4        save(user: User): void;
-                      5        getUser(): Promise<User>;
-                      6        remove(): Promise<void>;
+                      4      save(user: User): void;
+                      5      getUser(): Promise<User>;
+                      6      remove(): Promise<void>;
                       7    }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -1771,37 +1788,37 @@
                       2
                       3    export const LocalStorage = () => {
                       4
-                      5        const save = async (key: string, value: string) => {
-                      6            try {
-                      7                await AsyncStorage.setItem(key, value);
-                      8            } catch (error) {
-                      9                console.log('Error en Local Storage: ' + error);
-                     10            }
-                     11        }
+                      5      const save = async (key: string, value: string) => {
+                      6        try {
+                      7          await AsyncStorage.setItem(key, value);
+                      8        } catch (error) {
+                      9          console.log('Error en Local Storage: ' + error);
+                     10        }
+                     11      }
                      12
-                     13        const getItem = async (key: string) => {
-                     14            try {
-                     15                const item = await AsyncStorage.getItem(key);
-                     16                return item;
+                     13      const getItem = async (key: string) => {
+                     14        try {
+                     15          const item = await AsyncStorage.getItem(key);
+                     16          return item;
                      17
-                     18            } catch (error) {
-                     19                console.log('Error en Local Storage: ' + error);
-                     20            }
-                     21        }
+                     18        } catch (error) {
+                     19          console.log('Error en Local Storage: ' + error);
+                     20        }
+                     21      }
                      22
-                     23        const remove = async (key: string) => {
-                     24            try {
-                     25                await AsyncStorage.removeItem(key);
-                     26            } catch (error) {
-                     27                console.log('Error en Local Storage: ' + error);
-                     28            }
-                     29        }
+                     23      const remove = async (key: string) => {
+                     24        try {
+                     25          await AsyncStorage.removeItem(key);
+                     26        } catch (error) {
+                     27          console.log('Error en Local Storage: ' + error);
+                     28        }
+                     29      }
                      30
-                     31        return {
-                     32            save,
-                     33            getItem,
-                     34            remove
-                     35        }
+                     31      return {
+                     32        save,
+                     33        getItem,
+                     34        remove
+                     35      }
                      36    }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -1825,24 +1842,24 @@
                       2    import { UserLocalRepository } from "../../domain/repositories/UserLocalRepository";
                       3    import { LocalStorage } from "../sources/local/LocalStorage";
                       4
-                      5    export class UserLocalRepositoryImp implements UserLocalRepository{
+                      5    export class UserLocalRepositoryImp implements UserLocalRepository {
                       6
-                      7        async save(user: User): Promise<void> {
-                      8            const { save } = LocalStorage();
-                      9            await save('user', JSON.stringify(user));
-                     10        }
+                      7      async save(user: User): Promise<void> {
+                      8        const { save } = LocalStorage();
+                      9        await save('user', JSON.stringify(user));
+                     10      }
                      11
-                     12        async getUser(): Promise<User> {
-                     13            const { getItem } = LocalStorage();
-                     14            const data = await getItem('user');
-                     15            const user: User = JSON.parse(data as any);
-                     16            return user;
-                     17        }
+                     12      async getUser(): Promise<User> {
+                     13        const { getItem } = LocalStorage();
+                     14        const data = await getItem('user');
+                     15        const user: User = JSON.parse(data as any);
+                     16        return user;
+                     17      }
                      18
-                     19        async remove(): Promise<void> {
-                     20            const { remove } = LocalStorage();
-                     21            await remove('user');
-                     22        }
+                     19      async remove(): Promise<void> {
+                     20        const { remove } = LocalStorage();
+                     21        await remove('user');
+                     22      }
                      23    }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -1868,7 +1885,7 @@
                       4    const { save } = new UserLocalRepositoryImp();
                       5
                       6    export const SaveUserUseCase = async(user: User) => {
-                      7        return await save(user);
+                      7      return await save(user);
                       8    }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -1917,8 +1934,8 @@
                       2    import { ResponseApiDelivery } from "../../data/sources/remote/models/ResponseApiDelivery";
                       3
                       4    export interface AuthRepository {
-                      5        login(email: string, password: string): Promise<ResponseApiDelivery>;
-                      6        register(user: User): Promise<ResponseApiDelivery>;
+                      5      login(email: string, password: string): Promise<ResponseApiDelivery>;
+                      6      register(user: User): Promise<ResponseApiDelivery>;
                       7    }
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -2016,7 +2033,7 @@
 |-- 07.10.  Modificar ... en 'frontend_mob/src/presentation/views/home/ViewModel.tsx': ----------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                      1    import React, { useEffect, useState } from 'react';
+                      1    import { useEffect, useState } from 'react';
                       2    import { LoginAuthUseCase } from '../../../domain/useCases/auth/LoginAuth';
                       3    import { SaveUserUseCase } from '../../../domain/useCases/userLocal/SaveUserLocal';
                       4    import { GetUserLocalUseCase } from '../../../domain/useCases/userLocal/GetUserLocal';
@@ -2093,8 +2110,8 @@
 |-- 07.11.  Modificar ... en 'frontend_mob/src/presentation/views/home/Home.tsx': ---------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                      1    import React, { useState, useEffect } from 'react';
-                      2    import { Text, View, Image, TextInput, ToastAndroid, TouchableOpacity } from 'react-native';
+                      1    import React, { useEffect } from 'react';
+                      2    import { Text, View, Image, ToastAndroid, TouchableOpacity } from 'react-native';
                       3    import { RoundedButton } from '../../components/RoundedButton';
                       4    import { StackNavigationProp } from '@react-navigation/stack';
                       5    import { RootStackParamList } from '../../../../App';
@@ -2174,15 +2191,54 @@
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 07.12.  Ejecutar la app: --------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+            01. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
+                    
+                    ⦿   PS C:\..\frontend_mob> npm run android
+
+            02. Verificar que en la terminal aparezca algo similar a lo siguiente:
+
+                    LOG  Sesión de Usuario: {"id":1,"email":"profealbeiro2020@gmail.com","name":"Albeiro","lastname":"Ramos","image":"profile","phone":"3103103101",
+                    "role":"admin","session_token":"JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwcm9mZWFsYmVpcm8yMDIwQGdtYWlsLmNvbSIsInJvbGUiOiJ
+                    hZG1pbiIsImlhdCI6MTc2MTA5OTAzOSwiZXhwIjoxNzYxMTAyNjM5fQ.vdhKc-pQGCLvu7fImws8U6I9RDy8Rze2q1WxuPlJ0Ps"}
+
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
-|||---------------------------------------------------------------------- 08. IMPLEMENATAR HOOKS ----------------------------------------------------------------------|||
+|||------------------------------------------------------------------------ 08. CERRAR SESIÓN -------------------------------------------------------------------------|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 08.01.  Codificar ... en 'frontend_mob/src/presentation/hooks/useUserLocal.tsx': ------------------------------------------------------------------------------------|
+|-- 08.01.  08.01.  Codificar ... en 'frontend_mob/src/domain/useCases/UserLocal/RemoveUserLocal.tsx': ------------------------------------------------------------------|
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+                      1    import { UserLocalRepositoryImp } from '../../../data/repositories/UserLocalRepository';
+                      2
+                      3    const { remove } = new UserLocalRepositoryImp();
+                      4
+                      5    export const RemoveUserLocalUseCase = async () => {
+                      6      return await remove();
+                      7    }
+
+                ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
+                |                                                                                                                                         |
+                  EXPLICACIÓN:
+                    
+                    ⦿   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+
+                |---------------------------------------------------------------------------------------------------------------------------------------- |
+                
+                    A.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                    B.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                |                                                                                                                                         |
+                └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-- 08.02.  Codificar ... en 'frontend_mob/src/presentation/hooks/useUserLocal.tsx': ------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    import { useEffect, useState } from 'react';
@@ -2221,7 +2277,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 08.02.  Codificar ... en 'frontend_mob/src/presentation/views/profile/info/ViewModel.tsx': --------------------------------------------------------------------------|
+|-- 08.03.  Codificar ... en 'frontend_mob/src/presentation/views/profile/info/ViewModel.tsx': --------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    import { RemoveUserLocalUseCase } from '../../../../domain/useCases/userLocal/RemoveUserLocal';
@@ -2251,7 +2307,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 08.03.  Codificar ... en 'frontend_mob/src/presentation/views/profile/info/ProfileInfo.tsx': ------------------------------------------------------------------------|
+|-- 08.04.  Codificar ... en 'frontend_mob/src/presentation/views/profile/info/ProfileInfo.tsx': ------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    import { StackScreenProps } from '@react-navigation/stack';
@@ -2293,7 +2349,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 08.04.  Modificar ... en 'frontend_mob/src/presentation/views/home/ViewModel.tsx': ----------------------------------------------------------------------------------|
+|-- 08.05.  Modificar ... en 'frontend_mob/src/presentation/views/home/ViewModel.tsx': ----------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    import { useEffect, useState } from 'react';
@@ -2371,7 +2427,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 08.05.  Modificar ... en 'frontend_mob/src/presentation/views/home/Home.tsx': ---------------------------------------------------------------------------------------|
+|-- 08.06.  Modificar ... en 'frontend_mob/src/presentation/views/home/Home.tsx': ---------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    import React, { useEffect } from 'react';
@@ -2462,7 +2518,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 08.06.  Modificar ... en 'frontend_mob/App.tsx': --------------------------------------------------------------------------------------------------------------------|
+|-- 08.07.  Modificar ... en 'frontend_mob/App.tsx': --------------------------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
                       1    import * as React from 'react';
