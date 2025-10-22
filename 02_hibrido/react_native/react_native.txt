@@ -405,7 +405,7 @@
             04. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
                     
                     ⦿   PS C:\..\frontend_mob> npm install -g react-native-cli
-                    ⦿   PS C:\..\frontend_mob> npm npm i @react-navigation/stack
+                    ⦿   PS C:\..\frontend_mob> npm i @react-navigation/stack
                     ⦿   PS C:\..\frontend_mob> npx expo install @react-navigation/native @react-navigation/native-stack
                     ⦿   PS C:\..\frontend_mob> npx expo install react-native-screens react-native-safe-area-context
                     ⦿   PS C:\..\frontend_mob> npx expo install @react-native-async-storage/async-storage
