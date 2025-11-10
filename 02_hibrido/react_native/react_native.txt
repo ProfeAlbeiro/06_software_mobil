@@ -1285,7 +1285,7 @@
 
             01. En este punto se debe desarrollar y ejecutar la API, visitar el siguiente enlace para incluirla en el proyecto móvil:
 
-                https://github.com/ProfeAlbeiro/04_software_backend/blob/main/js/01_api_nodejs_mysql.txt?authuser=1
+                https://github.com/ProfeAlbeiro/04_software_backend/blob/main/js/api_nodejs_mysql.txt
 
 
 
