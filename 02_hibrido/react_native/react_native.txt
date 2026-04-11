@@ -239,7 +239,7 @@
 
             01. En la terminal de 'Visual Studio Code', instalar Expo CLI:
 
-                    ⦿   PS C:\..> npm install -g expo-cli exp
+                    ⦿   PS C:\..> npm i expo@54.0.6
 
             02. Verificar la versión de expo CLI en la terminal de 'Visual Studio Code':
 
