@@ -226,37 +226,6 @@
 
             07. Ejecutar el Emulador dando clic en la punta de flecha (columna 'Actions', la primera vez demorará más tiempo)
 
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 01.09.  Instalar Expo CLI: ------------------------------------------------------------------------------------------------------------------------------------------|
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-            Expo CLI es una interfaz de línea de comandos que permite montar un servidor para correr el proyecto localmente, construir proyectos
-            sencillos y publicarlos. Para más información:
-
-                    ⦿   https://docs.expo.dev/more/expo-cli/
-                    ⦿   https://gist.github.com/mrcodedev/37b463ae63c0c1d762e6efaf4c26af4f
-                    ⦿   https://blog.expo.dev/the-new-expo-cli-f4250d8e3421
-
-            01. En la terminal de 'Visual Studio Code', instalar Expo CLI:
-
-                    ⦿   PS C:\..> npm i expo@54.0.6
-
-            02. Verificar la versión de expo CLI en la terminal de 'Visual Studio Code':
-
-                    ⦿   PS C:\..> expo  --version
-
-                    ⦿   Si ya tiene un proyecto, reemplace en el archivo “package.json”:
-
-                            ⦿   "scripts":{ "start": "expo start"}, por "scripts":{ "start": "npx expo start"}
-
-                    ⦿   En caso de existir problema, puede desinstalar expo CLI en la terminal de 'Visual Studio Code':
-
-                            ⦿   PS C:\..> npm uninstall -g expo-cli
-
-                    ⦿   Con el objeto de verificar posibles conflictos de puertos, que se puedan presentar más adelante en el desarrollo de la App,
-                         puede listar los puertos utilizados en Windows desde la consola, con el comando 'netstat -ano'.
-
-
 
 |||\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|||
 |||--------------------------------------------------------------------------------------------------------------------------------------------------------------------|||
@@ -280,6 +249,33 @@
 
                           √ Downloaded and extracted project files.
                           > npm install
+                    
+                    ⦿   Modificar el 'package.json':
+
+                        {
+                          "name": "frontend_mob",
+                          "version": "1.0.0",
+                          "main": "index.ts",
+                          "scripts": {
+                            "start": "expo start",
+                            "android": "expo start --android",
+                            "ios": "expo start --ios",
+                            "web": "expo start --web"
+                          },
+                          "dependencies": {
+                            "expo": "~54.0.32",
+                            "expo-status-bar": "~3.0.9",
+                            "react": "19.1.0",
+                            "react-native": "0.81.5"
+                          },
+                          "devDependencies": {
+                            "@types/react": "~19.1.0",
+                            "typescript": "~5.9.2"
+                          },
+                          "private": true
+                        }
+
+
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
