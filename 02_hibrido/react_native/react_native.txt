@@ -40,8 +40,7 @@
 ||| --      02.02.  Ejecutar 'frontend_mob' en el emulador de Android                                                                                                  |||
 ||| --      02.03.  Ejecutar 'frontend_mob' en un dispositivo físico Android                                                                                           |||
 ||| --      02.04.  Modificar el mensaje de inicio del proyecto en 'frontend_mob/App.tsx'                                                                              |||
-||| --      02.05.  Instalar otras dependencias                                                                                                                        |||
-||| --      02.06.  Crear la estructura de carpetas y los archivos del proyecto                                                                                        |||
+||| --      02.05.  Crear la estructura de carpetas y los archivos del proyecto                                                                                        |||
 ||| --  03. VISTA DEL FORMULARIO DE REGISTRO                                                                                                                           |||
 ||| --      03.01.  Codificar los estilos globales 'frontend_mob/src/presentation/theme/AppTheme.tsx'                                                                  |||
 ||| --      03.02.  Codificar el componente para los controles de 'Texto' en 'frontend_mob/src/presentation/components/CustomTextInput.tsx'                            |||
@@ -263,10 +262,17 @@
                             "web": "expo start --web"
                           },
                           "dependencies": {
+                            "@react-native-async-storage/async-storage": "2.2.0",
+                            "@react-navigation/native": "^7.1.28",
+                            "@react-navigation/native-stack": "^7.10.1",
+                            "@react-navigation/stack": "^7.6.16",
+                            "axios": "^1.13.2",
                             "expo": "~54.0.32",
                             "expo-status-bar": "~3.0.9",
                             "react": "19.1.0",
-                            "react-native": "0.81.5"
+                            "react-native": "0.81.5",
+                            "react-native-safe-area-context": "~5.6.0",
+                            "react-native-screens": "~4.16.0"
                           },
                           "devDependencies": {
                             "@types/react": "~19.1.0",
@@ -274,7 +280,6 @@
                           },
                           "private": true
                         }
-
 
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
@@ -389,27 +394,7 @@
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 02.05.  Instalar otras dependencias: --------------------------------------------------------------------------------------------------------------------------------|
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-            01. En la Terminal de 'Visual Studio Code', parar la ejecución del servidor presionando las teclas 'CTRL + C'.
-            
-            02. En el Emulador de Android, cerrar las ventanas como si se hiciera en un celular.
-
-            03. En el celular, cerrar la aplicación desarrollada y en 'Expo', dar clic en 'CLEAR' para limpiar la ejecución.
-            
-            04. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
-                    
-                    ⦿   PS C:\..\frontend_mob> npm install -g react-native-cli
-                    ⦿   PS C:\..\frontend_mob> npm i @react-navigation/stack
-                    ⦿   PS C:\..\frontend_mob> npx expo install @react-navigation/native @react-navigation/native-stack
-                    ⦿   PS C:\..\frontend_mob> npx expo install react-native-screens react-native-safe-area-context
-                    ⦿   PS C:\..\frontend_mob> npx expo install @react-native-async-storage/async-storage
-                    ⦿   PS C:\..\frontend_mob> npm install axios
-
-
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|-- 02.06.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
+|-- 02.05.  Crear la estructura de carpetas y los archivos del proyecto: ------------------------------------------------------------------------------------------------|
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
                                                                                                                                                       
                                                                                                                                                       # C = Carpetas
