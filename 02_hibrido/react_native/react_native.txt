@@ -297,6 +297,7 @@
             01. En la Terminal de 'Visual Studio Code' digitar lo siguiente:
 
                     ⦿   PS C:\..\..> cd frontend_mob
+                    ⦿   PS C:\..\frontend_mob> npm i
                     ⦿   PS C:\..\frontend_mob> npm run android
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
