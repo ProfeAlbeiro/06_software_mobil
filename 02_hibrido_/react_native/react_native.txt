@@ -249,7 +249,7 @@
                           √ Downloaded and extracted project files.
                           > npm install
                     
-                    ⦿   Modificar el 'package.json' para Android:
+                    ⦿   Modificar el 'package.json' CON Emulador:
 
                         {
                           "name": "frontend_mob",
@@ -281,7 +281,7 @@
                           "private": true
                         }
 
-                    ⦿   Modificar el 'package.json' sin Android:
+                    ⦿   Modificar el 'package.json' SIN Emulador:
 
                         {
                           "name": "frontend_mob",
@@ -332,7 +332,14 @@
 
                     ⦿   PS C:\..\..> cd frontend_mob
                     ⦿   PS C:\..\frontend_mob> npm i
+            
+            02. Ejecutar CON Emulador:
+
                     ⦿   PS C:\..\frontend_mob> npm run android
+
+            03. Ejecutar SIN Emulador:
+
+                    ⦿   PS C:\..\frontend_mob> npx expo start --tunnel --clear
 
                 ┌ --------------------------------------------------------------------------------------------------------------------------------------- ┐
                 |                                                                                                                                         |
@@ -369,6 +376,17 @@
                               › shift+m │ more tools
                               › Press o │ open project code in your editor
                               › Press c │ show project QR
+
+                    ⦿   Si tiene dificultades SIN EL EMULADOR (Es decir, con el Celular), abra el puerto 3000 en Firewall con los siguiente pasos:
+
+															01.	Presione Windows + R, escriba wf.msc y presiona Enter															
+															02.	Vaya a "Reglas de entrada" en el panel izquierdo															
+															03.	Haga clic en "Acción" → "Nueva regla..."															
+															04.	Seleccione "Puerto" → Siguiente															
+															05.	En "Puertos locales específicos" escriba: 3000															
+															06.	Seleccione "Permitir la conexión" → Siguiente															
+															07.	Marque todas las opciones (Dominio, Privado, Público) → Siguiente															
+															08.	Póngale un nombre como "Puerto 3000 Backend" → Finalizar
                 |                                                                                                                                         |
                 └ --------------------------------------------------------------------------------------------------------------------------------------- ┘
 
